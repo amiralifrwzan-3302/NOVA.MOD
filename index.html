@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NOVA MOD</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#06060b;
+      --panel:#0d0d14;
+      --panel2:#13131d;
+      --line:#292231;
+      --text:#f8f7fb;
+      --muted:#aaa3b5;
+      --accent:#ffd23f;
+      --accent2:#8b6cff;
+      --novaBlue:#5fd6ff;
+      --shadow:0 24px 70px rgba(0,0,0,.55);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:"Vazirmatn",Tahoma,Arial,sans-serif;
+      background:
+        radial-gradient(circle at 50% -10%, rgba(255,210,63,.10), transparent 28%),
+        radial-gradient(circle at 100% 45%, rgba(139,108,255,.13), transparent 32%),
+        radial-gradient(circle at 0% 85%, rgba(95,214,255,.08), transparent 30%),
+        linear-gradient(180deg,#050509 0%,#090911 55%,#06060b 100%);
+      color:var(--text);
+      min-height:100vh;
+    }
+    .page{max-width:900px;margin:auto;padding:28px 18px 60px}
+    .card{
+      background:linear-gradient(180deg,rgba(14,14,20,.97),rgba(8,8,14,.98));
+      border:1px solid #29252f;
+      border-radius:30px;
+      box-shadow:var(--shadow), inset 0 1px 0 rgba(255,210,63,.06);
+      overflow:hidden;
+    }
+    .hero{padding:44px 26px 30px;text-align:center;position:relative}
+    .menu{
+      position:absolute;left:22px;top:22px;width:54px;height:54px;border-radius:18px;
+      display:grid;place-items:center;border:1px solid #3a3031;
+      background:#111119;color:var(--accent);
+      box-shadow:0 8px 28px rgba(0,0,0,.35);
+      font-size:28px
+    }
+    .game-icon{
+      width:112px;height:112px;margin:0 auto 18px;border-radius:26px;
+      display:grid;place-items:center;
+      background:linear-gradient(135deg,var(--accent2),var(--accent));
+      box-shadow:0 0 36px rgba(40,215,192,.2);
+      font-weight:900;font-size:24px;color:white;
+      border:2px solid rgba(255,255,255,.15)
+    }
+    h1{
+      font-size:46px;margin:8px 0 14px;letter-spacing:.5px;
+      font-weight:900;
+      background:linear-gradient(90deg,#fff2a8,#ffd23f,#ffb82e);
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+      text-shadow:0 0 28px rgba(255,210,63,.12)
+    }
+    .pill{
+      display:inline-block;padding:10px 20px;border-radius:999px;
+      background:linear-gradient(180deg,#1a1716,#121114);
+      border:1px solid #44382b;color:#ffd65a;font-weight:800
+    }
+    .divider{height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);margin:30px 0}
+    .section-title{font-size:34px;text-align:center;margin:0 0 26px}
+    .version{display:inline-flex;gap:10px;align-items:center;padding:10px 16px;border:1px solid #2b4d68;border-radius:999px;background:#0e2234;color:#b7fff5;font-weight:bold}
+    .content{padding:0 34px 36px}
+    .features{
+      background:linear-gradient(180deg,#0a0a10,#08080e);
+      border:1px solid #201d29;border-radius:26px;padding:24px;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.025)
+    }
+    .features h2{margin:0 0 22px;color:#ffd65a;font-size:24px;font-weight:900}
+    .item{
+      display:flex;align-items:center;justify-content:space-between;gap:16px;
+      padding:20px;border-radius:20px;
+      background:linear-gradient(135deg,#111119,#0d0d14);
+      border:1px solid #25222e;margin-bottom:14px
+    }
+    .item:last-child{margin-bottom:0}
+    .item .name{font-size:22px;font-weight:800}
+    .item .value{font-size:18px;color:#b8c9da}
+    .item .emoji{font-size:30px}
+    .accordion{margin-top:24px;border:1px solid #2b3f5f;border-radius:22px;padding:22px;background:#101a2d;display:flex;align-items:center;justify-content:space-between}
+    .accordion b{color:#c8bcff;font-size:22px}
+    .buttons{display:grid;gap:16px;margin-top:28px}
+    .btn{
+      text-decoration:none;text-align:center;padding:18px 20px;border-radius:18px;font-weight:900;font-size:21px;
+      transition:.2s transform ease,.2s opacity ease
+    }
+    .btn:hover{transform:translateY(-2px);opacity:.95}
+    .primary{
+      background:linear-gradient(135deg,#ffd23f,#ffb429);
+      color:#17120a;box-shadow:0 14px 32px rgba(255,194,45,.16)
+    }
+    .secondary{
+      background:linear-gradient(135deg,#735cff,#9a72ff);
+      color:#fff;box-shadow:0 14px 32px rgba(123,97,255,.15)
+    }
+    .footer{padding:24px;text-align:center;color:var(--muted);font-size:14px;border-top:1px solid #17324b}
+    @media (max-width:600px){
+      h1{font-size:36px}.content{padding:0 18px 24px}.hero{padding-top:74px}.section-title{font-size:28px}
+      .item{padding:16px}.item .name{font-size:19px}.btn{font-size:18px}
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="card">
+      <div class="hero">
+        <div class="menu">☰</div>
+        <img class="game-icon" src="https://uploadkon.ir/uploads/b17d27_26file-00000000455882439106ece2d524800d.png" alt="آیکون چیت سلطان حکم">
+        <h1>💛 چیت سلطان حکم 💛</h1>
+        <div class="pill">NOVA MOD</div>
+      </div>
+
+      <div class="content">
+        <section class="features">
+          <h2>🌸 قابلیت ها :</h2>
+
+          <div class="item">
+            <div>
+              <div class="name">دیدن کارت بازیکن های حریف</div>
+            </div>
+            <div class="emoji">🃏</div>
+          </div>
+
+        <div class="buttons">
+          <a class="btn primary" href="https://uploadkon.ir/uploads/133327_26سلطان-حکم-1-11.zip" target="_blank" download>💜 دانلود چیت</a>
+          <a class="btn secondary" href="https://rubika.ir/NOVA_CHIT" target="_blank" download>📢 چنل سازنده</a>
+        </div>
+      </div>
+
+      <div class="footer">رایگان • بدون بن شدن • جدید ترین نسخه</div>
+    </section>
+  </main>
+</body>
+</html>
