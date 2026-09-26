@@ -1,717 +1,3419 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="NOVA MOD — مرکز اختصاصی مود و ابزارهای گیمینگ">
-<title>NOVA MOD | مرکز اختصاصی مود و ابزارهای گیمینگ</title>
+  <meta charset="UTF-8">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-<style>
-/* ================= DESIGN TOKENS ================= */
-:root{
-  --bg:#05050a;
-  --bg-2:#08080f;
-  --panel:#0d0d16;
-  --panel-2:#111119;
-  --line:#241f30;
-  --line-soft:#1a1622;
-  --text:#f6f4fb;
-  --muted:#a49db5;
-  --gold:#ffd23f;
-  --gold-2:#ffb429;
-  --neon:#8b6cff;
-  --neon-2:#a98bff;
-  --green:#35e08a;
-  --radius:24px;
-  --radius-sm:16px;
-  --shadow:0 24px 60px rgba(0,0,0,.55);
-  --ring:0 0 0 1px rgba(255,255,255,.04);
-}
+  <meta name="description"
+        content="NOVA MOD — مرکز اختصاصی مود و ابزارهای گیمینگ">
 
-/* ================= RESET ================= */
-*{box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{
-  margin:0;
-  font-family:"Vazirmatn",Tahoma,Arial,sans-serif;
-  color:var(--text);
-  background:
-    radial-gradient(circle at 50% -8%,rgba(255,210,63,.10),transparent 32%),
-    radial-gradient(circle at 100% 25%,rgba(139,108,255,.14),transparent 38%),
-    radial-gradient(circle at 0% 60%,rgba(139,108,255,.08),transparent 40%),
-    linear-gradient(180deg,#050509,#090911 45%,#05050a);
-  background-attachment:fixed;
-  min-height:100vh;
-  overflow-x:hidden;
-  line-height:1.7;
-  -webkit-font-smoothing:antialiased;
-}
-a{color:inherit;text-decoration:none;}
-img{max-width:100%;display:block;}
-ul{margin:0;padding:0;list-style:none;}
+  <meta name="theme-color" content="#08080f">
 
-/* ================= LAYOUT ================= */
-.wrap{
-  width:100%;
-  max-width:1120px;
-  margin:0 auto;
-  padding:0 20px;
-}
-.section{padding:64px 0;}
-.section-head{margin-bottom:34px;}
-.section-tag{
-  display:inline-block;
-  font-size:13px;
-  font-weight:700;
-  letter-spacing:.5px;
-  color:var(--neon-2);
-  background:rgba(139,108,255,.10);
-  border:1px solid rgba(139,108,255,.28);
-  padding:5px 14px;
-  border-radius:999px;
-  margin-bottom:14px;
-}
-.section-head h2{
-  margin:0;
-  font-size:clamp(24px,4vw,36px);
-  font-weight:900;
-}
-.section-head p{
-  margin:8px 0 0;
-  color:var(--muted);
-  font-size:15px;
-}
+  <title>NOVA MOD | مرکز اختصاصی مود و ابزارهای گیمینگ</title>
 
-/* ================= NAVBAR ================= */
-.nav{
-  position:sticky;
-  top:0;
-  z-index:60;
-  backdrop-filter:blur(16px);
-  -webkit-backdrop-filter:blur(16px);
-  background:rgba(6,6,12,.72);
-  border-bottom:1px solid var(--line-soft);
-}
-.nav-inner{
-  display:flex;
+  <!-- ================= FONT ================= -->
 
-align-items:center;
-  justify-content:space-between;
-  gap:16px;
-  height:70px;
-}
-.brand{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-weight:900;
-  font-size:19px;
-  letter-spacing:.5px;
-}
-.brand .dot{
-  width:12px;height:12px;border-radius:50%;
-  background:linear-gradient(135deg,var(--gold),var(--neon));
-  box-shadow:0 0 14px rgba(255,210,63,.6);
-}
-.brand span{background:linear-gradient(135deg,#fff,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent;}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-.nav-links{display:flex;align-items:center;gap:6px;}
-.nav-links a{
-  padding:9px 16px;
-  border-radius:12px;
-  font-size:15px;
-  font-weight:600;
-  color:var(--muted);
-  transition:.25s;
-}
-.nav-links a:hover{color:var(--text);background:rgba(139,108,255,.10);}
+  <link
+    href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
 
-.nav-cta{
-  padding:10px 20px !important;
-  background:linear-gradient(135deg,var(--gold),var(--gold-2));
-  color:#16110a !important;
-  font-weight:900 !important;
-  border-radius:12px;
-}
-.nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(255,210,63,.25);}
+  <!-- ================= CSS ================= -->
 
-.burger{
-  display:none;
-  flex-direction:column;
-  gap:5px;
-  background:none;border:0;cursor:pointer;padding:8px;
-}
-.burger span{
-  width:24px;height:2px;border-radius:2px;background:var(--text);
-  transition:.3s;
-}
-.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
-.burger.open span:nth-child(2){opacity:0;}
-.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  <style>
 
-/* ================= HERO ================= */
-.hero{padding:80px 0 40px;text-align:center;position:relative;}
-.hero-badge{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:8px 18px;border-radius:999px;
-  background:rgba(139,108,255,.10);
-  border:1px solid rgba(139,108,255,.30);
-  color:var(--neon-2);font-weight:700;font-size:14px;
-  margin-bottom:26px;
-}
-.hero h1{
-  margin:0;
-  font-size:clamp(42px,10vw,84px);
-  font-weight:900;
-  line-height:1.05;
-  letter-spacing:1px;
-  background:linear-gradient(135deg,#ffffff 20%,var(--gold) 55%,var(--neon-2));
-  -webkit-background-clip:text;background-clip:text;color:transparent;
-  filter:drop-shadow(0 0 30px rgba(139,108,255,.25));
-}
-.hero .tagline{
-  margin:20px auto 0;
-  max-width:560px;
-  font-size:clamp(16px,3vw,20px);
-  font-weight:700;
-  color:#e9e5f5;
-}
-.hero .desc{
-  margin:16px auto 0;
-  max-width:600px;
-  color:var(--muted);
-  font-size:15px;
-}
-.hero-actions{
-  display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:36px;
-}
+    /* =========================================================
+       DESIGN TOKENS
+    ========================================================= */
 
-/* ================= BUTTONS ================= */
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:9px;
-  padding:15px 28px;
-  border-radius:15px;
-  font-size:16px;font-weight:800;
-  cursor:pointer;border:1px solid transparent;
-  transition:transform .25s,box-shadow .25s,background .25s;
-  text-align:center;
-  min-height:52px;
-}
-.btn-primary{
-  background:linear-gradient(135deg,var(--gold),var(--gold-2));
-  color:#16110a;
-  box-shadow:0 12px 30px rgba(255,210,63,.18);
-}
-.btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 38px rgba(255,210,63,.30);}
-.btn-neon{
-  background:linear-gradient(135deg,#735cff,#9a72ff);
-  color:#fff;
-  box-shadow:0 12px 30px rgba(139,108,255,.22);
-}
-.btn-neon:hover{transform:translateY(-3px);box-shadow:0 16px 38px rgba(139,108,255,.36);}
-.btn-ghost{
-  background:rgba(255,255,255,.03);
-  border:1px solid var(--line);
-  color:var(--text);
-}
-.btn-ghost:hover{transform:translateY(-3px);border-color:rgba(139,108,255,.45);background:rgba(139,108,255,.08);}
-.btn-block{width:100%;}
+    :root {
 
-/* ================= GLASS CARD ================= */
-.glass{
-  background:linear-gradient(180deg,rgba(20,20,30,.75),rgba(10,10,16,.75));
-  border:1px solid var(--line);
-  border-radius:var(--radius);
+      --bg: #05050a;
+      --bg-2: #08080f;
 
-box-shadow:var(--shadow),var(--ring);
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
-}
+      --panel: #0d0d16;
+      --panel-2: #111119;
 
-/* ================= GAME GRID ================= */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
-  gap:24px;
-}
-.game-card{
-  border-radius:var(--radius);
-  overflow:hidden;
-  background:linear-gradient(180deg,rgba(20,20,30,.8),rgba(9,9,15,.85));
-  border:1px solid var(--line);
-  box-shadow:var(--shadow);
-  transition:transform .3s,border-color .3s,box-shadow .3s;
-  display:flex;flex-direction:column;
-}
-.game-card:hover{
-  transform:translateY(-6px);
-  border-color:rgba(139,108,255,.45);
-  box-shadow:0 30px 60px rgba(0,0,0,.6),0 0 30px rgba(139,108,255,.12);
-}
-.game-thumb{
-  position:relative;
-  aspect-ratio:16/10;
-  overflow:hidden;
-  background:#0a0a12;
-}
-.game-thumb img{
-  width:100%;height:100%;object-fit:cover;
-  transition:transform .5s;
-}
-.game-card:hover .game-thumb img{transform:scale(1.06);}
-.game-thumb::after{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,transparent 40%,rgba(5,5,10,.9));
-}
-.badge-status{
-  position:absolute;top:12px;right:12px;z-index:2;
-  display:inline-flex;align-items:center;gap:6px;
-  padding:6px 12px;border-radius:999px;
-  font-size:12px;font-weight:800;
-  background:rgba(8,8,14,.8);
-  border:1px solid rgba(53,224,138,.4);
-  color:var(--green);
-  backdrop-filter:blur(6px);
-}
-.badge-status i{
-  width:7px;height:7px;border-radius:50%;background:var(--green);
-  box-shadow:0 0 10px var(--green);
-  animation:pulse 2s infinite;
-}
-.game-body{padding:20px;display:flex;flex-direction:column;flex:1;}
-.game-body h3{margin:0;font-size:21px;font-weight:900;}
-.game-meta{
-  display:flex;gap:8px;flex-wrap:wrap;margin:12px 0;
-}
-.chip{
-  font-size:12px;font-weight:700;
-  padding:5px 11px;border-radius:999px;
-  background:rgba(255,255,255,.04);
-  border:1px solid var(--line);
-  color:var(--muted);
-}
-.chip.gold{color:var(--gold);border-color:rgba(255,210,63,.3);background:rgba(255,210,63,.06);}
-.game-desc{margin:0 0 18px;color:var(--muted);font-size:14px;flex:1;}
-.game-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-.game-actions .btn{padding:12px 10px;min-height:46px;font-size:14px;}
+      --line: #241f30;
+      --line-soft: #1a1622;
 
-/* ================= LATEST RELEASE ================= */
-.latest{
-  position:relative;
-  border-radius:28px;
-  padding:36px;
-  overflow:hidden;
-  background:
-    radial-gradient(circle at 100% 0%,rgba(139,108,255,.20),transparent 55%),
-    radial-gradient(circle at 0% 100%,rgba(255,210,63,.13),transparent 50%),
-    linear-gradient(180deg,#100f1a,#0a0a12);
-  border:1px solid rgba(139,108,255,.35);
-  box-shadow:0 30px 70px rgba(0,0,0,.55),0 0 40px rgba(139,108,255,.08);
-}
-.latest-grid{
-  display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;
-}
-.latest-icon{
-  width:110px;height:110px;border-radius:26px;object-fit:cover;
-  border:2px solid rgba(255,210,63,.45);
-  box-shadow:0 0 34px rgba(255,210,63,.22);
-}
-.latest h3{margin:0 0 6px;font-size:clamp(22px,4vw,30px);font-weight:900;}
-.latest .sub{color:var(--muted);margin:0 0 16px;font-size:15px;}
-.latest-tags{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px;}
-.tag{
-  display:inline-flex;align-items:center;gap:7px;
-  padding:7px 14px;border-radius:999px;font-size:13px;font-weight:800;
-}
-.tag.active{background:rgba(53,224,138,.10);color:var(--green);border:1px solid rgba(53,224,138,.4);}
-.tag.new{background:rgba(139,108,255,.12);color:var(--neon-2);border:1px solid rgba(139,108,255,.4);}
-.tag.gold{background:rgba(255,210,63,.08);color:var(--gold);border:1px solid rgba(255,210,63,.32);}
+      --text: #f6f4fb;
+      --muted: #a49db5;
 
-/* ================= STATUS ================= */
-.status-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:18px;
-}
+      --gold: #ffd23f;
+      --gold-2: #ffb429;
 
-<header class="nav">
-  <div class="wrap nav-inner">
-    <a href="#home" class="brand"><span class="dot"></span><span>NOVA MOD</span></a>
+      --neon: #8b6cff;
+      --neon-2: #a98bff;
 
-    <nav class="nav-links" id="navLinks">
-      <a href="#home">خانه</a>
-      <a href="#games">بازی‌ها</a>
-      <a href="#latest">آخرین انتشار</a>
-      <a href="#about">درباره NOVA</a>
-      <a class="nav-cta" href="#games">شروع کن</a>
-    </nav>
+      --green: #35e08a;
+      --red: #ff5577;
 
-    <button class="burger" id="burger" aria-label="منوی موبایل">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
+      --radius: 24px;
+      --radius-sm: 16px;
 
-<!-- ============ HERO ============ -->
-<main class="wrap">
-  <section class="hero" id="home">
-    <div class="hero-badge">💜 پلتفرم اختصاصی گیمینگ</div>
-    <h1>NOVA MOD</h1>
-    <p class="tagline">مرکز اختصاصی مود و ابزارهای گیمینگ</p>
-    <p class="desc">جدیدترین مودها، چیت‌ها و ابزارهای گیمینگ — همیشه رایگان، بدون بن شدن و همیشه به‌روز.</p>
+      --shadow:
+        0 24px 60px rgba(0,0,0,.55);
 
-    <div class="hero-actions">
-      <a href="#games" class="btn btn-primary">🎮 مشاهده بازی‌ها</a>
-      <a href="#latest" class="btn btn-neon">🔥 آخرین انتشار</a>
-    </div>
-  </section>
+      --ring:
+        0 0 0 1px rgba(255,255,255,.04);
+    }
 
-  <!-- ============ GAME LIBRARY ============ -->
-  <section class="section" id="games">
-    <div class="section-head reveal">
-      <span class="section-tag">🎮 GAME LIBRARY</span>
-      <h2>کتابخانه بازی‌ها</h2>
-      <p>مودهای اختصاصی NOVA MOD را برای بازی‌های محبوب انتخاب و دانلود کن.</p>
-    </div>
 
-    <div class="grid">
+    /* =========================================================
+       RESET
+    ========================================================= */
 
-      <!-- Game Card: منچ باز -->
-      <article class="game-card reveal">
-        <div class="game-thumb">
-          <span class="badge-status"><i></i> فعال</span>
-          <img src="https://uploadkon.ir/uploads/713823_26file-00000000ba4c81f48de6ddd208635662.png" alt="آیکون چیت منچ باز" loading="lazy" decoding="async">
-        </div>
-        <div class="game-body">
-          <h3>🎲 منچ باز</h3>
-          <div class="game-meta">
-            <span class="chip gold">نسخه 2.41.8</span>
-            <span class="chip">رایگان</span>
-          </div>
-          <p class="game-desc">چیت اختصاصی NOVA MOD برای منچ باز با جدیدترین ویژگی‌ها و پشتیبانی از آخرین نسخهٔ بازی.</p>
-          <div class="game-actions">
-            <a class="btn btn-primary"
-               href="https://uploadkon.ir/uploads/62d523_26منچ-باز-2-41-8-toast.zip"
-               target="_blank" rel="noopener">💜 دانلود</a>
-            <button class="btn btn-ghost js-details"
-               data-name="منچ باز"
-               data-icon="https://uploadkon.ir/uploads/713823_26file-00000000ba4c81f48de6ddd208635662.png"
-               data-version="2.41.8"
-               data-status="فعال"
-               data-desc="چیت اختصاصی NOVA MOD برای منچ باز، سازگار با آخرین نسخه و کاملاً رایگان.">مشاهده جزئیات</button>
-          </div>
-        </div>
-      </article>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-      <!-- Game Card: مافیامون -->
-      <article class="game-card reveal">
-        <div class="game-thumb">
-          <span class="badge-status"><i></i> فعال</span>
-          <img src="https://uploadkon.ir/uploads/d3f223_26file-00000000484881f4848fe3cd7f2720e6.png" alt="آیکون چیت مافیامون" loading="lazy" decoding="async">
-        </div>
-        <div class="game-body">
-          <h3>🎭 مافیامون</h3>
+    html {
+      scroll-behavior: smooth;
+    }
 
-.status-item{
-  display:flex;align-items:center;gap:14px;
-  padding:22px;
-  border-radius:var(--radius-sm);
-  background:linear-gradient(180deg,var(--panel-2),#0b0b12);
-  border:1px solid var(--line);
-}
-.status-item i.led{
-  width:11px;height:11px;border-radius:50%;flex-shrink:0;
-  background:var(--green);
-  box-shadow:0 0 12px var(--green);
-  animation:pulse 2.2s infinite;
-}
-.status-item .txt strong{display:block;font-size:16px;font-weight:800;}
-.status-item .txt small{color:var(--muted);font-size:13px;}
+    body {
 
-/* ================= FOOTER ================= */
-.footer{
-  border-top:1px solid var(--line-soft);
-  margin-top:40px;
-  padding:44px 0 34px;
-  text-align:center;
-}
-.footer .brand{justify-content:center;font-size:22px;margin-bottom:14px;}
-.footer p{margin:0 0 22px;color:var(--muted);font-size:14px;}
-.socials{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:26px;}
-.socials a{
-  display:inline-flex;align-items:center;gap:9px;
-  padding:12px 20px;border-radius:14px;
-  background:rgba(255,255,255,.03);
-  border:1px solid var(--line);
-  font-size:14px;font-weight:700;
-  transition:.25s;
-}
-.socials a:hover{transform:translateY(-3px);border-color:rgba(139,108,255,.5);background:rgba(139,108,255,.08);}
-.copy{color:#6f6880;font-size:13px;}
+      margin: 0;
 
-/* ================= MODAL ================= */
-.modal{
-  position:fixed;inset:0;z-index:100;
-  display:none;align-items:center;justify-content:center;
-  padding:20px;
-  background:rgba(3,3,8,.8);
-  backdrop-filter:blur(8px);
-}
-.modal.open{display:flex;}
-.modal-box{
-  width:100%;max-width:440px;
-  border-radius:24px;
-  padding:28px;
-  background:linear-gradient(180deg,#13121d,#0b0b12);
-  border:1px solid rgba(139,108,255,.35);
-  box-shadow:0 40px 90px rgba(0,0,0,.7);
-  animation:pop .28s ease;
-}
-.modal-box .m-top{display:flex;align-items:center;gap:16px;margin-bottom:18px;}
-.modal-box img{width:64px;height:64px;border-radius:16px;object-fit:cover;border:1px solid var(--line);}
-.modal-box h3{margin:0;font-size:20px;font-weight:900;}
-.modal-box .m-rows{display:grid;gap:10px;margin:0 0 22px;}
-.m-row{display:flex;justify-content:space-between;gap:12px;font-size:14px;padding:11px 14px;border-radius:12px;background:rgba(255,255,255,.03);border:1px solid var(--line-soft);}
-.m-row span{color:var(--muted);}
-.m-row b{font-weight:800;}
+      font-family:
+        "Vazirmatn",
+        Tahoma,
+        Arial,
+        sans-serif;
 
-/* ================= ANIMATIONS ================= */
-@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.35;}}
-@keyframes pop{from{transform:scale(.94);opacity:0;}to{transform:scale(1);opacity:1;}}
-.reveal{opacity:0;transform:translateY(26px);transition:opacity .6s ease,transform .6s ease;}
-.reveal.in{opacity:1;transform:none;}
+      color: var(--text);
 
-/* ================= RESPONSIVE ================= */
-@media(max-width:860px){
-  .nav-links{
-    position:fixed;
-    top:70px;right:0;left:0;
-    flex-direction:column;
-    align-items:stretch;
-    gap:4px;
-    padding:14px 20px 22px;
-    background:rgba(7,7,13,.97);
-    backdrop-filter:blur(16px);
-    border-bottom:1px solid var(--line);
-    transform:translateY(-140%);
-    transition:transform .32s ease;
-    z-index:55;
-  }
-  .nav-links.open{transform:translateY(0);}
-  .nav-links a{padding:13px 16px;font-size:16px;}
-  .nav-cta{text-align:center;}
-  .burger{display:flex;}
-}
-@media(max-width:640px){
-  .section{padding:48px 0;}
-  .hero{padding:56px 0 30px;}
-  .latest{padding:26px 22px;}
-  .latest-grid{grid-template-columns:1fr;text-align:center;justify-items:center;}
-  .latest-tags{justify-content:center;}
-  .game-actions{grid-template-columns:1fr;}
-  .grid{gap:18px;}
-}
-@media(max-width:400px){
-  .wrap{padding:0 14px;}
-  .brand{font-size:17px;}
-  .btn{padding:14px 20px;font-size:15px;}
-}
-</style>
+      background:
+
+        radial-gradient(
+          circle at 50% -8%,
+          rgba(255,210,63,.10),
+          transparent 32%
+        ),
+
+        radial-gradient(
+          circle at 100% 25%,
+          rgba(139,108,255,.14),
+          transparent 38%
+        ),
+
+        radial-gradient(
+          circle at 0% 60%,
+          rgba(139,108,255,.08),
+          transparent 40%
+        ),
+
+        linear-gradient(
+          180deg,
+          #050509,
+          #090911 45%,
+          #05050a
+        );
+
+      background-attachment: fixed;
+
+      min-height: 100vh;
+
+      overflow-x: hidden;
+
+      line-height: 1.7;
+
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font-family: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+
+    /* =========================================================
+       MAIN LAYOUT
+    ========================================================= */
+
+    .wrap {
+
+      width: 100%;
+
+      max-width: 1120px;
+
+      margin: 0 auto;
+
+      padding: 0 20px;
+    }
+
+
+    .section {
+      padding: 64px 0;
+    }
+
+
+    .section-head {
+      margin-bottom: 34px;
+    }
+
+
+    .section-tag {
+
+      display: inline-block;
+
+      font-size: 13px;
+
+      font-weight: 700;
+
+      letter-spacing: .5px;
+
+      color: var(--neon-2);
+
+      background:
+        rgba(139,108,255,.10);
+
+      border:
+        1px solid rgba(139,108,255,.28);
+
+      padding:
+        5px 14px;
+
+      border-radius: 999px;
+
+      margin-bottom: 14px;
+    }
+
+
+    .section-head h2 {
+
+      margin: 0;
+
+      font-size:
+        clamp(24px, 4vw, 36px);
+
+      font-weight: 900;
+
+      line-height: 1.3;
+    }
+
+
+    .section-head p {
+
+      margin:
+        8px 0 0;
+
+      color: var(--muted);
+
+      font-size: 15px;
+    }
+
+
+    /* =========================================================
+       NAVBAR
+    ========================================================= */
+
+    .nav {
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 60;
+
+      backdrop-filter:
+        blur(16px);
+
+      -webkit-backdrop-filter:
+        blur(16px);
+
+      background:
+        rgba(6,6,12,.72);
+
+      border-bottom:
+        1px solid var(--line-soft);
+    }
+
+
+    .nav-inner {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 16px;
+
+      height: 70px;
+    }
+
+
+    /* ================= BRAND ================= */
+
+    .brand {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+      font-weight: 900;
+
+      font-size: 19px;
+
+      letter-spacing: .5px;
+    }
+
+
+    .brand .dot {
+
+      width: 12px;
+      height: 12px;
+
+      border-radius: 50%;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--gold),
+          var(--neon)
+        );
+
+      box-shadow:
+        0 0 14px
+        rgba(255,210,63,.6);
+    }
+
+
+    .brand span:last-child {
+
+      background:
+        linear-gradient(
+          135deg,
+          #fff,
+          var(--gold)
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      color: transparent;
+    }
+
+
+    /* ================= NAV LINKS ================= */
+
+    .nav-links {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 6px;
+    }
+
+
+    .nav-links a {
+
+      padding:
+        9px 16px;
+
+      border-radius: 12px;
+
+      font-size: 15px;
+
+      font-weight: 600;
+
+      color: var(--muted);
+
+      transition:
+        .25s ease;
+    }
+
+
+    .nav-links a:hover {
+
+      color: var(--text);
+
+      background:
+        rgba(139,108,255,.10);
+    }
+
+
+    /* ================= NAV CTA ================= */
+
+    .nav-cta {
+
+      padding:
+        10px 20px !important;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--gold),
+          var(--gold-2)
+        );
+
+      color:
+        #16110a !important;
+
+      font-weight:
+        900 !important;
+
+      border-radius:
+        12px;
+    }
+
+
+    .nav-cta:hover {
+
+      transform:
+        translateY(-2px);
+
+      box-shadow:
+        0 8px 22px
+        rgba(255,210,63,.25);
+    }
+
+
+    /* ================= MOBILE MENU ================= */
+
+    .burger {
+
+      display: none;
+
+      flex-direction: column;
+
+      gap: 5px;
+
+      background: none;
+
+      border: 0;
+
+      cursor: pointer;
+
+      padding: 8px;
+    }
+
+
+    .burger span {
+
+      width: 24px;
+
+      height: 2px;
+
+      border-radius: 2px;
+
+      background:
+        var(--text);
+
+      transition:
+        .3s ease;
+    }
+
+
+    .burger.open span:nth-child(1) {
+
+      transform:
+        translateY(7px)
+        rotate(45deg);
+    }
+
+
+    .burger.open span:nth-child(2) {
+
+      opacity: 0;
+    }
+
+
+    .burger.open span:nth-child(3) {
+
+      transform:
+        translateY(-7px)
+        rotate(-45deg);
+    }
+
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+
+      padding:
+        80px 0 40px;
+
+      text-align: center;
+
+      position: relative;
+    }
+
+
+    .hero-badge {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 8px;
+
+      padding:
+        8px 18px;
+
+      border-radius:
+        999px;
+
+      background:
+        rgba(139,108,255,.10);
+
+      border:
+        1px solid
+        rgba(139,108,255,.30);
+
+      color:
+        var(--neon-2);
+
+      font-weight:
+        700;
+
+      font-size:
+        14px;
+
+      margin-bottom:
+        26px;
+    }
+
+
+    .hero h1 {
+
+      margin: 0;
+
+      font-size:
+        clamp(42px, 10vw, 84px);
+
+      font-weight:
+        900;
+
+      line-height:
+        1.05;
+
+      letter-spacing:
+        1px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #ffffff 20%,
+          var(--gold) 55%,
+          var(--neon-2)
+        );
+
+      -webkit-background-clip:
+        text;
+
+      background-clip:
+        text;
+
+      color:
+        transparent;
+
+      filter:
+        drop-shadow(
+          0 0 30px
+          rgba(139,108,255,.25)
+        );
+    }
+
+
+    .hero .tagline {
+
+      margin:
+        20px auto 0;
+
+      max-width:
+        560px;
+
+      font-size:
+        clamp(16px,3vw,20px);
+
+      font-weight:
+        700;
+
+      color:
+        #e9e5f5;
+    }
+
+
+    .hero .desc {
+
+      margin:
+        16px auto 0;
+
+      max-width:
+        600px;
+
+      color:
+        var(--muted);
+
+      font-size:
+        15px;
+    }
+
+
+    .hero-actions {
+
+      display: flex;
+
+      gap: 16px;
+
+      justify-content: center;
+
+      flex-wrap: wrap;
+
+      margin-top: 36px;
+    }
+
+
+    /* =========================================================
+       BUTTONS
+    ========================================================= */
+
+    .btn {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 9px;
+
+      padding:
+        15px 28px;
+
+      border-radius:
+        15px;
+
+      font-size:
+        16px;
+
+      font-weight:
+        800;
+
+      cursor:
+        pointer;
+
+      border:
+        1px solid transparent;
+
+      transition:
+        transform .25s,
+        box-shadow .25s,
+        background .25s;
+
+      text-align:
+        center;
+
+      min-height:
+        52px;
+    }
+
+
+    .btn-primary {
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--gold),
+          var(--gold-2)
+        );
+
+      color:
+        #16110a;
+
+      box-shadow:
+        0 12px 30px
+        rgba(255,210,63,.18);
+    }
+
+
+    .btn-primary:hover {
+
+      transform:
+        translateY(-3px);
+
+      box-shadow:
+        0 16px 38px
+        rgba(255,210,63,.30);
+    }
+
+
+    .btn-neon {
+
+      background:
+        linear-gradient(
+          135deg,
+          #735cff,
+          #9a72ff
+        );
+
+      color:
+        #fff;
+
+      box-shadow:
+        0 12px 30px
+        rgba(139,108,255,.22);
+    }
+
+
+    .btn-neon:hover {
+
+      transform:
+        translateY(-3px);
+
+      box-shadow:
+        0 16px 38px
+        rgba(139,108,255,.36);
+    }
+
+
+    .btn-ghost {
+
+      background:
+        rgba(255,255,255,.03);
+
+      border:
+        1px solid var(--line);
+
+      color:
+        var(--text);
+    }
+
+
+    .btn-ghost:hover {
+
+      transform:
+        translateY(-3px);
+
+      border-color:
+        rgba(139,108,255,.45);
+
+      background:
+        rgba(139,108,255,.08);
+    }
+
+
+    .btn-block {
+      width: 100%;
+    }
+
+
+    /* =========================================================
+       GLASS CARD
+    ========================================================= */
+
+    .glass {
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(20,20,30,.75),
+          rgba(10,10,16,.75)
+        );
+
+      border:
+        1px solid var(--line);
+
+      border-radius:
+        var(--radius);
+
+      box-shadow:
+        var(--shadow),
+        var(--ring);
+
+      backdrop-filter:
+        blur(10px);
+
+      -webkit-backdrop-filter:
+        blur(10px);
+    }
+
+  </style>
 </head>
 
 <body>
 
-<!-- ============ NAVBAR ============ -->
+  <!-- =========================================================
+       NAVBAR
+  ========================================================= -->
 
-<div class="game-meta">
-            <span class="chip gold">نسخه 1.10.4</span>
-            <span class="chip">رایگان</span>
-          </div>
-          <p class="game-desc">چیت حرفه‌ای NOVA MOD برای مافیامون با امکانات جدید و اجرای پایدار روی آخرین نسخه.</p>
-          <div class="game-actions">
-            <a class="btn btn-primary"
-               href="https://uploadkon.ir/uploads/690e23_26مافیامون-1-10-4-toast.zip"
-               target="_blank" rel="noopener">💜 دانلود</a>
-            <button class="btn btn-ghost js-details"
-               data-name="مافیامون"
-               data-icon="https://uploadkon.ir/uploads/d3f223_26file-00000000484881f4848fe3cd7f2720e6.png"
-               data-version="1.10.4"
-               data-status="فعال"
-               data-desc="چیت حرفه‌ای NOVA MOD برای مافیامون، سازگار با آخرین نسخه و بدون بن شدن.">مشاهده جزئیات</button>
-          </div>
-        </div>
-      </article>
+  <header class="nav">
+
+    <div class="wrap nav-inner">
+
+      <!-- BRAND -->
+      <a href="#home" class="brand" aria-label="NOVA MOD">
+
+        <span class="dot"></span>
+
+        <span>NOVA MOD</span>
+
+      </a>
+
+
+      <!-- DESKTOP / MOBILE NAVIGATION -->
+      <nav class="nav-links" id="navLinks">
+
+        <a href="#home">
+          خانه
+        </a>
+
+        <a href="#games">
+          بازی‌ها
+        </a>
+
+        <a href="#latest">
+          آخرین انتشار
+        </a>
+
+        <a href="#about">
+          درباره NOVA
+        </a>
+
+        <a
+          class="nav-cta"
+          href="#games"
+        >
+          شروع کن
+        </a>
+
+      </nav>
+
+
+      <!-- MOBILE MENU BUTTON -->
+      <button
+        class="burger"
+        id="burger"
+        type="button"
+        aria-label="باز کردن منو"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </button>
 
     </div>
-  </section>
 
-  <!-- ============ LATEST RELEASE ============ -->
-  <section class="section" id="latest">
-    <div class="section-head reveal">
-      <span class="section-tag">🔥 LATEST RELEASE</span>
-      <h2>آخرین انتشار</h2>
-    </div>
+  </header>
 
-    <div class="latest reveal">
-      <div class="latest-grid">
-        <img class="latest-icon" src="https://uploadkon.ir/uploads/713823_26file-00000000ba4c81f48de6ddd208635662.png" alt="آیکون چیت منچ باز" loading="lazy" decoding="async">
+
+
+  <!-- =========================================================
+       MAIN
+  ========================================================= -->
+
+  <main class="wrap">
+
+
+    <!-- =======================================================
+         HERO SECTION
+    ======================================================= -->
+
+    <section
+      class="hero"
+      id="home"
+    >
+
+      <!-- HERO BADGE -->
+
+      <div class="hero-badge">
+
+        <span>💜</span>
+
+        <span>
+          پلتفرم اختصاصی گیمینگ
+        </span>
+
+      </div>
+
+
+      <!-- MAIN TITLE -->
+
+      <h1>
+        NOVA MOD
+      </h1>
+
+
+      <!-- TAGLINE -->
+
+      <p class="tagline">
+
+        مرکز اختصاصی مود و ابزارهای گیمینگ
+
+      </p>
+
+
+      <!-- DESCRIPTION -->
+
+      <p class="desc">
+
+        جدیدترین مودها، ابزارها و انتشارهای
+        NOVA را در یک مکان پیدا کن؛
+        ساده، سریع و همیشه در دسترس.
+
+      </p>
+
+
+      <!-- HERO BUTTONS -->
+
+      <div class="hero-actions">
+
+        <a
+          href="#games"
+          class="btn btn-primary"
+        >
+          🎮 مشاهده بازی‌ها
+        </a>
+
+
+        <a
+          href="#latest"
+          class="btn btn-neon"
+        >
+          🔥 آخرین انتشار
+        </a>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =======================================================
+         HERO / QUICK INFO
+    ======================================================= -->
+
+    <section
+      class="hero-quick"
+      aria-label="اطلاعات سریع NOVA"
+    >
+
+      <div class="quick-item">
+
+        <span class="quick-icon">
+          🎮
+        </span>
+
         <div>
-          <h3>🎮 چیت منچ باز</h3>
-          <p class="sub">نسخهٔ جدید منتشر شد</p>
-          <div class="latest-tags">
-            <span class="tag active"><i class="dot-inline"></i> 🟢 Active</span>
-            <span class="tag new">🆕 New Version</span>
-            <span class="tag gold">نسخه 2.41.8</span>
-          </div>
-          <a class="btn btn-primary"
-             href="https://uploadkon.ir/uploads/62d523_26منچ-باز-2-41-8-toast.zip"
-             target="_blank" rel="noopener">⬇️ دانلود نسخه</a>
+
+          <strong>
+            بازی‌های منتخب
+          </strong>
+
+          <small>
+            مجموعه اختصاصی NOVA
+          </small>
+
         </div>
+
       </div>
-    </div>
-  </section>
 
-  <!-- ============ NOVA STATUS ============ -->
-  <section class="section" id="about">
-    <div class="section-head reveal">
-      <span class="section-tag">📡 NOVA STATUS</span>
-      <h2>وضعیت سیستم</h2>
-      <p>وضعیت لحظه‌ای سرویس‌های NOVA MOD.</p>
-    </div>
 
-    <div class="status-grid reveal">
-      <div class="status-item">
-        <i class="led"></i>
-        <div class="txt"><strong>🟢 سرویس دانلود</strong><small>در دسترس و پایدار</small></div>
+      <div class="quick-item">
+
+        <span class="quick-icon">
+          ⚡
+        </span>
+
+        <div>
+
+          <strong>
+            انتشار سریع
+          </strong>
+
+          <small>
+            جدیدترین نسخه‌ها
+          </small>
+
+        </div>
+
       </div>
-      <div class="status-item">
-        <i class="led"></i>
-        <div class="txt"><strong>🟢 آخرین انتشار</strong><small>به‌روزرسانی شده</small></div>
+
+
+      <div class="quick-item">
+
+        <span class="quick-icon">
+          🛡️
+        </span>
+
+        <div>
+
+          <strong>
+            دسترسی آسان
+          </strong>
+
+          <small>
+            دانلود مستقیم
+          </small>
+
+        </div>
+
       </div>
-      <div class="status-item">
-        <i class="led"></i>
-        <div class="txt"><strong>🟢 وضعیت سایت</strong><small>آنلاین و فعال</small></div>
+
+    </section>
+
+    <!-- =======================================================
+         GAME LIBRARY
+    ======================================================= -->
+
+    <section
+      class="section"
+      id="games"
+    >
+
+      <!-- SECTION HEADER -->
+
+      <div class="section-head reveal">
+
+        <span class="section-tag">
+          🎮 GAME LIBRARY
+        </span>
+
+        <h2>
+          کتابخانه بازی‌ها
+        </h2>
+
+        <p>
+          بازی‌ها و انتشارهای اختصاصی NOVA MOD را انتخاب کن.
+        </p>
+
       </div>
+
+
+      <!-- =====================================================
+           GAME GRID
+      ===================================================== -->
+
+      <div class="grid">
+
+
+        <!-- ===================================================
+             GAME CARD — منچ باز
+        =================================================== -->
+
+        <article class="game-card reveal">
+
+          <!-- IMAGE -->
+
+          <div class="game-thumb">
+
+            <span class="badge-status">
+
+              <i></i>
+
+              فعال
+
+            </span>
+
+
+            <img
+              src="https://uploadkon.ir/uploads/713823_26file-00000000ba4c81f48de6ddd208635662.png"
+              alt="چیت منچ باز NOVA MOD"
+              loading="lazy"
+              decoding="async"
+            >
+
+          </div>
+
+
+          <!-- CONTENT -->
+
+          <div class="game-body">
+
+            <h3>
+              🎲 منچ باز
+            </h3>
+
+
+            <!-- META -->
+
+            <div class="game-meta">
+
+              <span class="chip gold">
+                نسخه 2.41.8
+              </span>
+
+              <span class="chip">
+                رایگان
+              </span>
+
+            </div>
+
+
+            <!-- DESCRIPTION -->
+
+            <p class="game-desc">
+
+              چیت اختصاصی NOVA MOD برای منچ باز
+              با جدیدترین ویژگی‌ها و پشتیبانی از
+              آخرین نسخه بازی.
+
+            </p>
+
+
+            <!-- ACTIONS -->
+
+            <div class="game-actions">
+
+              <a
+                class="btn btn-primary"
+                href="https://uploadkon.ir/uploads/62d523_26منچ-باز-2-41-8-toast.zip"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                💜 دانلود
+              </a>
+
+
+              <button
+                type="button"
+                class="btn btn-ghost js-details"
+
+                data-name="منچ باز"
+
+                data-icon="https://uploadkon.ir/uploads/713823_26file-00000000ba4c81f48de6ddd208635662.png"
+
+                data-version="2.41.8"
+
+                data-status="فعال"
+
+                data-desc="چیت اختصاصی NOVA MOD برای منچ باز، سازگار با آخرین نسخه و کاملاً رایگان."
+              >
+                مشاهده جزئیات
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- ===================================================
+             GAME CARD — مافیامون
+        =================================================== -->
+
+        <article class="game-card reveal">
+
+          <!-- IMAGE -->
+
+          <div class="game-thumb">
+
+            <span class="badge-status">
+
+              <i></i>
+
+              فعال
+
+            </span>
+
+
+            <img
+              src="https://uploadkon.ir/uploads/d3f223_26file-00000000484881f4848fe3cd7f2720e6.png"
+              alt="چیت مافیامون NOVA MOD"
+              loading="lazy"
+              decoding="async"
+            >
+
+          </div>
+
+
+          <!-- CONTENT -->
+
+          <div class="game-body">
+
+            <h3>
+              🎭 مافیامون
+            </h3>
+
+
+            <!-- META -->
+
+            <div class="game-meta">
+
+              <span class="chip gold">
+                نسخه 1.10.4
+              </span>
+
+              <span class="chip">
+                رایگان
+              </span>
+
+            </div>
+
+
+            <!-- DESCRIPTION -->
+
+            <p class="game-desc">
+
+              چیت حرفه‌ای NOVA MOD برای مافیامون
+              با امکانات جدید و اجرای پایدار
+              روی آخرین نسخه بازی.
+
+            </p>
+
+
+            <!-- ACTIONS -->
+
+            <div class="game-actions">
+
+              <a
+                class="btn btn-primary"
+                href="https://uploadkon.ir/uploads/690e23_26مافیامون-1-10-4-toast.zip"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                💜 دانلود
+              </a>
+
+
+              <button
+                type="button"
+                class="btn btn-ghost js-details"
+
+                data-name="مافیامون"
+
+                data-icon="https://uploadkon.ir/uploads/d3f223_26file-00000000484881f4848fe3cd7f2720e6.png"
+
+                data-version="1.10.4"
+
+                data-status="فعال"
+
+                data-desc="چیت حرفه‌ای NOVA MOD برای مافیامون، سازگار با آخرین نسخه و کاملاً رایگان."
+              >
+                مشاهده جزئیات
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- ===================================================
+             COMING SOON CARD
+        =================================================== -->
+
+        <article class="game-card game-card-soon reveal">
+
+          <div class="game-thumb coming-soon-thumb">
+
+            <div class="coming-soon-icon">
+              ✦
+            </div>
+
+            <span class="coming-label">
+              به‌زودی
+            </span>
+
+          </div>
+
+
+          <div class="game-body">
+
+            <h3>
+              🎮 انتشار بعدی
+            </h3>
+
+
+            <div class="game-meta">
+
+              <span class="chip">
+                در حال آماده‌سازی
+              </span>
+
+            </div>
+
+
+            <p class="game-desc">
+
+              انتشار بعدی NOVA MOD به‌زودی
+              در این بخش قرار خواهد گرفت.
+
+            </p>
+
+
+            <div class="game-actions">
+
+              <button
+                type="button"
+                class="btn btn-ghost btn-block"
+                disabled
+              >
+                🔒 به‌زودی
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+    <!-- =======================================================
+         LATEST RELEASE
+    ======================================================= -->
+
+    <section
+      class="section"
+      id="latest"
+    >
+
+      <div class="section-head reveal">
+
+        <span class="section-tag">
+          🔥 LATEST RELEASE
+        </span>
+
+        <h2>
+          آخرین انتشار
+        </h2>
+
+        <p>
+          جدیدترین نسخه منتشرشده توسط NOVA MOD
+        </p>
+
+      </div>
+
+
+      <div class="latest reveal">
+
+        <div class="latest-grid">
+
+          <!-- RELEASE ICON -->
+
+          <img
+            class="latest-icon"
+            src="https://uploadkon.ir/uploads/713823_26file-00000000ba4c81f48de6ddd208635662.png"
+            alt="آخرین انتشار منچ باز"
+            loading="lazy"
+            decoding="async"
+          >
+
+
+          <!-- RELEASE INFO -->
+
+          <div>
+
+            <h3>
+              🎮 چیت منچ باز
+            </h3>
+
+            <p class="sub">
+              نسخه جدید منتشر شد
+            </p>
+
+
+            <div class="latest-tags">
+
+              <span class="tag active">
+                🟢 فعال
+              </span>
+
+              <span class="tag new">
+                🆕 نسخه جدید
+              </span>
+
+              <span class="tag gold">
+                نسخه 2.41.8
+              </span>
+
+            </div>
+
+
+            <a
+              class="btn btn-primary"
+              href="https://uploadkon.ir/uploads/62d523_26منچ-باز-2-41-8-toast.zip"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              ⬇️ دانلود نسخه
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =======================================================
+         NOVA STATUS
+    ======================================================= -->
+
+    <section
+      class="section"
+      id="about"
+    >
+
+      <div class="section-head reveal">
+
+        <span class="section-tag">
+          📡 NOVA STATUS
+        </span>
+
+        <h2>
+          وضعیت سیستم
+        </h2>
+
+        <p>
+          وضعیت فعلی بخش‌های مختلف NOVA MOD
+        </p>
+
+      </div>
+
+
+      <div class="status-grid reveal">
+
+
+        <!-- STATUS 1 -->
+
+        <div class="status-item">
+
+          <i class="led"></i>
+
+          <div class="txt">
+
+            <strong>
+              🟢 سرویس دانلود
+            </strong>
+
+            <small>
+              در دسترس و فعال
+            </small>
+
+          </div>
+
+        </div>
+
+
+        <!-- STATUS 2 -->
+
+        <div class="status-item">
+
+          <i class="led"></i>
+
+          <div class="txt">
+
+            <strong>
+              🟢 آخرین انتشار
+            </strong>
+
+            <small>
+              به‌روزرسانی شده
+            </small>
+
+          </div>
+
+        </div>
+
+
+        <!-- STATUS 3 -->
+
+        <div class="status-item">
+
+          <i class="led"></i>
+
+          <div class="txt">
+
+            <strong>
+              🟢 وضعیت سایت
+            </strong>
+
+            <small>
+              آنلاین و فعال
+            </small>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =========================================================
+       FOOTER
+  ========================================================= -->
+
+  <footer class="footer">
+
+    <div class="wrap">
+
+
+      <!-- FOOTER BRAND -->
+
+      <div class="brand">
+
+        <span class="dot"></span>
+
+        <span>
+          NOVA MOD
+        </span>
+
+      </div>
+
+
+      <p>
+        مرکز اختصاصی مود و ابزارهای گیمینگ
+      </p>
+
+
+      <!-- SOCIAL LINKS -->
+
+      <div class="socials">
+
+
+        <a
+          href="https://t.me/IM_NOVAA"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          🛠️ پشتیبانی — @IM_NOVAA
+        </a>
+
+
+        <a
+          href="https://t.me/NOVA_CHIT"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          📢 کانال — @NOVA_CHIT
+        </a>
+
+
+        <a
+          href="https://rubika.ir/NOVA_CHIT"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          📣 روبیکا — NOVA_CHIT
+        </a>
+
+
+      </div>
+
+
+      <div class="copy">
+        © تمام حقوق محفوظ است — NOVA MOD
+      </div>
+
+
     </div>
-  </section>
-</main>
 
-<!-- ============ FOOTER ============ -->
-<footer class="footer">
-  <div class="wrap">
-    <div class="brand"><span class="dot"></span><span>NOVA MOD</span></div>
-    <p>مرکز اختصاصی مود و ابزارهای گیمینگ</p>
+  </footer>
 
-    <div class="socials">
 
-<a href="https://t.me/IM_NOVAA" target="_blank" rel="noopener">🛠 پشتیبانی — @IM_NOVAA</a>
-      <a href="https://t.me/NOVA_CHIT" target="_blank" rel="noopener">📢 کانال — @NOVA_CHIT</a>
-      <a href="https://rubika.ir/NOVA_CHIT" target="_blank" rel="noopener">📣 روبیکا — NOVA_CHIT</a>
+
+  <!-- =========================================================
+       DETAILS MODAL
+  ========================================================= -->
+
+  <div
+    class="modal"
+    id="modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="mName"
+  >
+
+    <div class="modal-box">
+
+
+      <!-- MODAL HEADER -->
+
+      <div class="m-top">
+
+        <img
+          id="mIcon"
+          src=""
+          alt=""
+        >
+
+
+        <div>
+
+          <h3 id="mName">
+            —
+          </h3>
+
+          <span
+            class="chip gold"
+            id="mVersion"
+          >
+            —
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- MODAL INFORMATION -->
+
+      <div class="m-rows">
+
+
+        <div class="m-row">
+
+          <span>
+            وضعیت
+          </span>
+
+          <b
+            id="mStatus"
+            style="color:var(--green)"
+          >
+            —
+          </b>
+
+        </div>
+
+
+        <div class="m-row">
+
+          <span>
+            قیمت
+          </span>
+
+          <b>
+            رایگان
+          </b>
+
+        </div>
+
+
+        <div class="m-row">
+
+          <span>
+            توضیح
+          </span>
+
+          <b
+            id="mDesc"
+            style="
+              font-weight:500;
+              text-align:left;
+            "
+          >
+            —
+          </b>
+
+        </div>
+
+
+      </div>
+
+
+      <!-- CLOSE BUTTON -->
+
+      <button
+        type="button"
+        class="btn btn-neon btn-block"
+        id="mClose"
+      >
+        بستن
+      </button>
+
+
     </div>
 
-    <div class="copy">© تمام حقوق محفوظ است — NOVA MOD</div>
   </div>
-</footer>
 
-<!-- ============ MODAL ============ -->
-<div class="modal" id="modal">
-  <div class="modal-box">
-    <div class="m-top">
-      <img id="mIcon" src="" alt="">
-      <div>
-        <h3 id="mName">—</h3>
-        <span class="chip gold" id="mVersion">—</span>
-      </div>
-    </div>
-    <div class="m-rows">
-      <div class="m-row"><span>وضعیت</span><b id="mStatus" style="color:var(--green)">—</b></div>
-      <div class="m-row"><span>قیمت</span><b>رایگان</b></div>
-      <div class="m-row"><span>توضیح</span><b id="mDesc" style="font-weight:500;text-align:left;">—</b></div>
-    </div>
-    <button class="btn btn-neon btn-block" id="mClose">بستن</button>
-  </div>
-</div>
 
-<script>
-(function(){
-  "use strict";
 
-  /* ----- Mobile Navbar ----- */
-  var burger = document.getElementById("burger");
-  var navLinks = document.getElementById("navLinks");
+  <!-- =========================================================
+       ADDITIONAL CSS
+       HERO QUICK INFO
+       GAME CARD
+       STATUS
+       FOOTER
+       MODAL
+       ANIMATIONS
+       RESPONSIVE
+  ========================================================= -->
 
-  burger.addEventListener("click", function(){
-    var open = navLinks.classList.toggle("open");
-    burger.classList.toggle("open", open);
-    burger.setAttribute("aria-expanded", open ? "true" : "false");
-  });
+  <style>
 
-  /* بستن منو با کلیک روی لینک‌ها */
-  navLinks.querySelectorAll("a").forEach(function(a){
-    a.addEventListener("click", function(){
-      navLinks.classList.remove("open");
-      burger.classList.remove("open");
-    });
-  });
+    /* ================= HERO QUICK ================= */
 
-  /* ----- Reveal on Scroll (سبک با IntersectionObserver) ----- */
-  var reveals = document.querySelectorAll(".reveal");
-  if ("IntersectionObserver" in window){
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if (e.isIntersecting){
-          e.target.classList.add("in");
-          io.unobserve(e.target);
+    .hero-quick {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 14px;
+
+      margin:
+        10px auto 30px;
+
+      max-width: 900px;
+    }
+
+
+    .quick-item {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 13px;
+
+      padding: 17px 18px;
+
+      border-radius: 18px;
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(20,20,30,.70),
+          rgba(10,10,16,.70)
+        );
+
+      border:
+        1px solid var(--line);
+
+      box-shadow:
+        0 18px 40px rgba(0,0,0,.30);
+
+      transition:
+        transform .25s ease,
+        border-color .25s ease,
+        background .25s ease;
+    }
+
+
+    .quick-item:hover {
+
+      transform:
+        translateY(-4px);
+
+      border-color:
+        rgba(139,108,255,.35);
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(25,23,38,.80),
+          rgba(10,10,16,.80)
+        );
+    }
+
+
+    .quick-icon {
+
+      width: 42px;
+      height: 42px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      flex-shrink: 0;
+
+      border-radius: 13px;
+
+      background:
+        rgba(139,108,255,.10);
+
+      border:
+        1px solid
+        rgba(139,108,255,.20);
+
+      font-size: 20px;
+    }
+
+
+    .quick-item strong {
+
+      display: block;
+
+      font-size: 14px;
+
+      font-weight: 800;
+    }
+
+
+    .quick-item small {
+
+      display: block;
+
+      margin-top: 2px;
+
+      color:
+        var(--muted);
+
+      font-size: 11px;
+    }
+
+
+    /* ================= GAME GRID ================= */
+
+    .grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          auto-fill,
+          minmax(280px, 1fr)
+        );
+
+      gap: 24px;
+    }
+
+
+    /* ================= GAME CARD ================= */
+
+    .game-card {
+
+      border-radius:
+        var(--radius);
+
+      overflow:
+        hidden;
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(20,20,30,.80),
+          rgba(9,9,15,.85)
+        );
+
+      border:
+        1px solid var(--line);
+
+      box-shadow:
+        var(--shadow);
+
+      transition:
+        transform .30s ease,
+        border-color .30s ease,
+        box-shadow .30s ease;
+
+      display:
+        flex;
+
+      flex-direction:
+        column;
+    }
+
+
+    .game-card:hover {
+
+      transform:
+        translateY(-6px);
+
+      border-color:
+        rgba(139,108,255,.45);
+
+      box-shadow:
+        0 30px 60px rgba(0,0,0,.60),
+        0 0 30px rgba(139,108,255,.12);
+    }
+
+
+    .game-thumb {
+
+      position:
+        relative;
+
+      aspect-ratio:
+        16 / 10;
+
+      overflow:
+        hidden;
+
+      background:
+        #0a0a12;
+    }
+
+
+    .game-thumb img {
+
+      width:
+        100%;
+
+      height:
+        100%;
+
+      object-fit:
+        cover;
+
+      transition:
+        transform .50s ease;
+    }
+
+
+    .game-card:hover
+    .game-thumb img {
+
+      transform:
+        scale(1.06);
+    }
+
+
+    .game-thumb::after {
+
+      content: "";
+
+      position:
+        absolute;
+
+      inset:
+        0;
+
+      background:
+        linear-gradient(
+          180deg,
+          transparent 35%,
+          rgba(5,5,10,.92)
+        );
+
+      pointer-events:
+        none;
+    }
+
+
+    /* ================= STATUS BADGE ================= */
+
+    .badge-status {
+
+      position:
+        absolute;
+
+      top:
+        12px;
+
+      right:
+        12px;
+
+      z-index:
+        2;
+
+      display:
+        inline-flex;
+
+      align-items:
+        center;
+
+      gap:
+        6px;
+
+      padding:
+        6px 12px;
+
+      border-radius:
+        999px;
+
+      font-size:
+        12px;
+
+      font-weight:
+        800;
+
+      background:
+        rgba(8,8,14,.82);
+
+      border:
+        1px solid
+        rgba(53,224,138,.40);
+
+      color:
+        var(--green);
+
+      backdrop-filter:
+        blur(6px);
+    }
+
+
+    .badge-status i {
+
+      width:
+        7px;
+
+      height:
+        7px;
+
+      border-radius:
+        50%;
+
+      background:
+        var(--green);
+
+      box-shadow:
+        0 0 10px var(--green);
+
+      animation:
+        pulse 2s infinite;
+    }
+
+
+    /* ================= GAME BODY ================= */
+
+    .game-body {
+
+      padding:
+        20px;
+
+      display:
+        flex;
+
+      flex-direction:
+        column;
+
+      flex: 1;
+    }
+
+
+    .game-body h3 {
+
+      margin:
+        0;
+
+      font-size:
+        21px;
+
+      font-weight:
+        900;
+    }
+
+
+    .game-meta {
+
+      display:
+        flex;
+
+      gap:
+        8px;
+
+      flex-wrap:
+        wrap;
+
+      margin:
+        12px 0;
+    }
+
+
+    .chip {
+
+      font-size:
+        12px;
+
+      font-weight:
+        700;
+
+      padding:
+        5px 11px;
+
+      border-radius:
+        999px;
+
+      background:
+        rgba(255,255,255,.04);
+
+      border:
+        1px solid var(--line);
+
+      color:
+        var(--muted);
+    }
+
+
+    .chip.gold {
+
+      color:
+        var(--gold);
+
+      border-color:
+        rgba(255,210,63,.30);
+
+      background:
+        rgba(255,210,63,.06);
+    }
+
+
+    .game-desc {
+
+      margin:
+        0 0 18px;
+
+      color:
+        var(--muted);
+
+      font-size:
+        14px;
+
+      flex:
+        1;
+    }
+
+
+    .game-actions {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap:
+        10px;
+    }
+
+
+    .game-actions .btn {
+
+      padding:
+        12px 10px;
+
+      min-height:
+        46px;
+
+      font-size:
+        14px;
+    }
+
+
+    /* ================= COMING SOON ================= */
+
+    .game-card-soon {
+
+      opacity:
+        .86;
+    }
+
+
+    .coming-soon-thumb {
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      min-height:
+        220px;
+
+      background:
+
+        radial-gradient(
+          circle,
+          rgba(139,108,255,.18),
+          transparent 60%
+        ),
+
+        #0a0a12;
+    }
+
+
+    .coming-soon-icon {
+
+      width:
+        78px;
+
+      height:
+        78px;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      border-radius:
+        22px;
+
+      color:
+        var(--neon-2);
+
+      font-size:
+        32px;
+
+      background:
+        rgba(139,108,255,.08);
+
+      border:
+        1px solid
+        rgba(139,108,255,.28);
+
+      box-shadow:
+        0 0 35px
+        rgba(139,108,255,.12);
+    }
+
+
+    .coming-label {
+
+      position:
+        absolute;
+
+      bottom:
+        14px;
+
+      left:
+        50%;
+
+      transform:
+        translateX(-50%);
+
+      padding:
+        5px 13px;
+
+      border-radius:
+        999px;
+
+      font-size:
+        12px;
+
+      font-weight:
+        800;
+
+      color:
+        var(--neon-2);
+
+      background:
+        rgba(8,8,14,.82);
+
+      border:
+        1px solid
+        rgba(139,108,255,.30);
+    }
+
+
+    /* ================= LATEST RELEASE ================= */
+
+    .latest {
+
+      position:
+        relative;
+
+      border-radius:
+        28px;
+
+      padding:
+        36px;
+
+      overflow:
+        hidden;
+
+      background:
+
+        radial-gradient(
+          circle at 100% 0%,
+          rgba(139,108,255,.20),
+          transparent 55%
+        ),
+
+        radial-gradient(
+          circle at 0% 100%,
+          rgba(255,210,63,.13),
+          transparent 50%
+        ),
+
+        linear-gradient(
+          180deg,
+          #100f1a,
+          #0a0a12
+        );
+
+      border:
+        1px solid
+        rgba(139,108,255,.35);
+
+      box-shadow:
+        0 30px 70px rgba(0,0,0,.55),
+        0 0 40px rgba(139,108,255,.08);
+    }
+
+
+    .latest-grid {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        auto 1fr;
+
+      gap:
+        28px;
+
+      align-items:
+        center;
+    }
+
+
+    .latest-icon {
+
+      width:
+        110px;
+
+      height:
+        110px;
+
+      border-radius:
+        26px;
+
+      object-fit:
+        cover;
+
+      border:
+        2px solid
+        rgba(255,210,63,.45);
+
+      box-shadow:
+        0 0 34px
+        rgba(255,210,63,.22);
+    }
+
+
+    .latest h3 {
+
+      margin:
+        0 0 6px;
+
+      font-size:
+        clamp(22px,4vw,30px);
+
+      font-weight:
+        900;
+    }
+
+
+    .latest .sub {
+
+      color:
+        var(--muted);
+
+      margin:
+        0 0 16px;
+
+      font-size:
+        15px;
+    }
+
+
+    .latest-tags {
+
+      display:
+        flex;
+
+      gap:
+        10px;
+
+      flex-wrap:
+        wrap;
+
+      margin-bottom:
+        22px;
+    }
+
+
+    .tag {
+
+      display:
+        inline-flex;
+
+      align-items:
+        center;
+
+      gap:
+        7px;
+
+      padding:
+        7px 14px;
+
+      border-radius:
+        999px;
+
+      font-size:
+        13px;
+
+      font-weight:
+        800;
+    }
+
+
+    .tag.active {
+
+      background:
+        rgba(53,224,138,.10);
+
+      color:
+        var(--green);
+
+      border:
+        1px solid
+        rgba(53,224,138,.40);
+    }
+
+
+    .tag.new {
+
+      background:
+        rgba(139,108,255,.12);
+
+      color:
+        var(--neon-2);
+
+      border:
+        1px solid
+        rgba(139,108,255,.40);
+    }
+
+
+    .tag.gold {
+
+      background:
+        rgba(255,210,63,.08);
+
+      color:
+        var(--gold);
+
+      border:
+        1px solid
+        rgba(255,210,63,.32);
+    }
+
+
+    /* ================= STATUS ================= */
+
+    .status-grid {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(
+          auto-fit,
+          minmax(200px,1fr)
+        );
+
+      gap:
+        18px;
+    }
+
+
+    .status-item {
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      gap:
+        14px;
+
+      padding:
+        22px;
+
+      border-radius:
+        var(--radius-sm);
+
+      background:
+        linear-gradient(
+          180deg,
+          var(--panel-2),
+          #0b0b12
+        );
+
+      border:
+        1px solid var(--line);
+    }
+
+
+    .status-item i.led {
+
+      width:
+        11px;
+
+      height:
+        11px;
+
+      border-radius:
+        50%;
+
+      flex-shrink:
+        0;
+
+      background:
+        var(--green);
+
+      box-shadow:
+        0 0 12px var(--green);
+
+      animation:
+        pulse 2.2s infinite;
+    }
+
+
+    .status-item .txt strong {
+
+      display:
+        block;
+
+      font-size:
+        16px;
+
+      font-weight:
+        800;
+    }
+
+
+    .status-item .txt small {
+
+      color:
+        var(--muted);
+
+      font-size:
+        13px;
+    }
+
+
+    /* ================= FOOTER ================= */
+
+    .footer {
+
+      border-top:
+        1px solid var(--line-soft);
+
+      margin-top:
+        40px;
+
+      padding:
+        44px 0 34px;
+
+      text-align:
+        center;
+    }
+
+
+    .footer .brand {
+
+      justify-content:
+        center;
+
+      font-size:
+        22px;
+
+      margin-bottom:
+        14px;
+    }
+
+
+    .footer p {
+
+      margin:
+        0 0 22px;
+
+      color:
+        var(--muted);
+
+      font-size:
+        14px;
+    }
+
+
+    .socials {
+
+      display:
+        flex;
+
+      gap:
+        14px;
+
+      justify-content:
+        center;
+
+      flex-wrap:
+        wrap;
+
+      margin-bottom:
+        26px;
+    }
+
+
+    .socials a {
+
+      display:
+        inline-flex;
+
+      align-items:
+        center;
+
+      gap:
+        9px;
+
+      padding:
+        12px 20px;
+
+      border-radius:
+        14px;
+
+      background:
+        rgba(255,255,255,.03);
+
+      border:
+        1px solid var(--line);
+
+      font-size:
+        14px;
+
+      font-weight:
+        700;
+
+      transition:
+        .25s;
+    }
+
+
+    .socials a:hover {
+
+      transform:
+        translateY(-3px);
+
+      border-color:
+        rgba(139,108,255,.50);
+
+      background:
+        rgba(139,108,255,.08);
+    }
+
+
+    .copy {
+
+      color:
+        #6f6880;
+
+      font-size:
+        13px;
+    }
+
+
+    /* ================= MODAL ================= */
+
+    .modal {
+
+      position:
+        fixed;
+
+      inset:
+        0;
+
+      z-index:
+        100;
+
+      display:
+        none;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      padding:
+        20px;
+
+      background:
+        rgba(3,3,8,.80);
+
+      backdrop-filter:
+        blur(8px);
+
+      -webkit-backdrop-filter:
+        blur(8px);
+    }
+
+
+    .modal.open {
+      display:
+        flex;
+    }
+
+
+    .modal-box {
+
+      width:
+        100%;
+
+      max-width:
+        440px;
+
+      border-radius:
+        24px;
+
+      padding:
+        28px;
+
+      background:
+        linear-gradient(
+          180deg,
+          #13121d,
+          #0b0b12
+        );
+
+      border:
+        1px solid
+        rgba(139,108,255,.35);
+
+      box-shadow:
+        0 40px 90px
+        rgba(0,0,0,.70);
+
+      animation:
+        pop .28s ease;
+    }
+
+
+    .modal-box .m-top {
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      gap:
+        16px;
+
+      margin-bottom:
+        18px;
+    }
+
+
+    .modal-box img {
+
+      width:
+        64px;
+
+      height:
+        64px;
+
+      border-radius:
+        16px;
+
+      object-fit:
+        cover;
+
+      border:
+        1px solid var(--line);
+    }
+
+
+    .modal-box h3 {
+
+      margin:
+        0;
+
+      font-size:
+        20px;
+
+      font-weight:
+        900;
+    }
+
+
+    .modal-box .m-rows {
+
+      display:
+        grid;
+
+      gap:
+        10px;
+
+      margin:
+        0 0 22px;
+    }
+
+
+    .m-row {
+
+      display:
+        flex;
+
+      justify-content:
+        space-between;
+
+      gap:
+        12px;
+
+      font-size:
+        14px;
+
+      padding:
+        11px 14px;
+
+      border-radius:
+        12px;
+
+      background:
+        rgba(255,255,255,.03);
+
+      border:
+        1px solid var(--line-soft);
+    }
+
+
+    .m-row span {
+      color:
+        var(--muted);
+    }
+
+
+    .m-row b {
+      font-weight:
+        800;
+    }
+
+
+    /* ================= ANIMATIONS ================= */
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: .35;
+      }
+
+    }
+
+
+    @keyframes pop {
+
+      from {
+        transform:
+          scale(.94);
+
+        opacity:
+          0;
+      }
+
+      to {
+        transform:
+          scale(1);
+
+        opacity:
+          1;
+      }
+
+    }
+
+
+    .reveal {
+
+      opacity:
+        0;
+
+      transform:
+        translateY(26px);
+
+      transition:
+        opacity .6s ease,
+        transform .6s ease;
+    }
+
+
+    .reveal.in {
+
+      opacity:
+        1;
+
+      transform:
+        none;
+    }
+
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+    @media (max-width: 860px) {
+
+      .nav-links {
+
+        position:
+          fixed;
+
+        top:
+          70px;
+
+        right:
+          0;
+
+        left:
+          0;
+
+        flex-direction:
+          column;
+
+        align-items:
+          stretch;
+
+        gap:
+          4px;
+
+        padding:
+          14px 20px 22px;
+
+        background:
+          rgba(7,7,13,.97);
+
+        backdrop-filter:
+          blur(16px);
+
+        -webkit-backdrop-filter:
+          blur(16px);
+
+        border-bottom:
+          1px solid var(--line);
+
+        transform:
+          translateY(-140%);
+
+        transition:
+          transform .32s ease;
+
+        z-index:
+          55;
+      }
+
+
+      .nav-links.open {
+        transform:
+          translateY(0);
+      }
+
+
+      .nav-links a {
+
+        padding:
+          13px 16px;
+
+        font-size:
+          16px;
+      }
+
+
+      .nav-cta {
+
+        text-align:
+          center;
+      }
+
+
+      .burger {
+        display:
+          flex;
+      }
+
+
+      .hero-quick {
+
+        grid-template-columns:
+          1fr;
+
+        max-width:
+          520px;
+      }
+
+    }
+
+
+    @media (max-width: 640px) {
+
+      .section {
+        padding:
+          48px 0;
+      }
+
+
+      .hero {
+
+        padding:
+          56px 0 30px;
+      }
+
+
+      .latest {
+
+        padding:
+          26px 22px;
+      }
+
+
+      .latest-grid {
+
+        grid-template-columns:
+          1fr;
+
+        text-align:
+          center;
+
+        justify-items:
+          center;
+      }
+
+
+      .latest-tags {
+
+        justify-content:
+          center;
+      }
+
+
+      .game-actions {
+
+        grid-template-columns:
+          1fr;
+      }
+
+
+      .grid {
+
+        gap:
+          18px;
+      }
+
+
+      .socials {
+
+        flex-direction:
+          column;
+      }
+
+
+      .socials a {
+
+        justify-content:
+          center;
+      }
+
+    }
+
+
+    @media (max-width: 400px) {
+
+      .wrap {
+
+        padding:
+          0 14px;
+      }
+
+
+      .brand {
+
+        font-size:
+          17px;
+      }
+
+
+      .btn {
+
+        padding:
+          14px 20px;
+
+        font-size:
+          15px;
+      }
+
+
+      .modal-box {
+
+        padding:
+          22px 18px;
+      }
+
+    }
+
+  </style>
+
+
+
+  <!-- =========================================================
+       JAVASCRIPT
+  ========================================================= -->
+
+  <script>
+
+    (function () {
+
+      "use strict";
+
+
+      /* =======================================================
+         MOBILE NAVBAR
+      ======================================================= */
+
+      var burger =
+        document.getElementById("burger");
+
+      var navLinks =
+        document.getElementById("navLinks");
+
+
+      if (burger && navLinks) {
+
+        burger.addEventListener(
+          "click",
+          function () {
+
+            var open =
+              navLinks.classList.toggle("open");
+
+            burger.classList.toggle(
+              "open",
+              open
+            );
+
+            burger.setAttribute(
+              "aria-expanded",
+              open ? "true" : "false"
+            );
+
+          }
+        );
+
+
+        navLinks
+          .querySelectorAll("a")
+          .forEach(function (a) {
+
+            a.addEventListener(
+              "click",
+              function () {
+
+                navLinks.classList.remove(
+                  "open"
+                );
+
+                burger.classList.remove(
+                  "open"
+                );
+
+                burger.setAttribute(
+                  "aria-expanded",
+                  "false"
+                );
+
+              }
+            );
+
+          });
+
+      }
+
+
+      /* =======================================================
+         REVEAL ON SCROLL
+      ======================================================= */
+
+      var reveals =
+        document.querySelectorAll(
+          ".reveal"
+        );
+
+
+      if (
+        "IntersectionObserver"
+        in window
+      ) {
+
+        var observer =
+          new IntersectionObserver(
+
+            function (entries) {
+
+              entries.forEach(
+                function (entry) {
+
+                  if (
+                    entry.isIntersecting
+                  ) {
+
+                    entry.target.classList.add(
+                      "in"
+                    );
+
+                    observer.unobserve(
+                      entry.target
+                    );
+
+                  }
+
+                }
+              );
+
+            },
+
+            {
+              threshold: .14
+            }
+
+          );
+
+
+        reveals.forEach(
+          function (element) {
+
+            observer.observe(
+              element
+            );
+
+          }
+        );
+
+      } else {
+
+        reveals.forEach(
+          function (element) {
+
+            element.classList.add(
+              "in"
+            );
+
+          }
+        );
+
+      }
+
+
+      /* =======================================================
+         MODAL
+      ======================================================= */
+
+      var modal =
+        document.getElementById(
+          "modal"
+        );
+
+      var mName =
+        document.getElementById(
+          "mName"
+        );
+
+      var mIcon =
+        document.getElementById(
+          "mIcon"
+        );
+
+      var mVersion =
+        document.getElementById(
+          "mVersion"
+        );
+
+      var mStatus =
+        document.getElementById(
+          "mStatus"
+        );
+
+      var mDesc =
+        document.getElementById(
+          "mDesc"
+        );
+
+      var mClose =
+        document.getElementById(
+          "mClose"
+        );
+
+
+      function openModal(button) {
+
+        if (!modal) return;
+
+
+        mName.textContent =
+          button.dataset.name || "—";
+
+
+        mIcon.src =
+          button.dataset.icon || "";
+
+
+        mIcon.alt =
+          button.dataset.name || "";
+
+
+        mVersion.textContent =
+          "نسخه " +
+          (button.dataset.version || "—");
+
+
+        mStatus.textContent =
+          button.dataset.status || "—";
+
+
+        mDesc.textContent =
+          button.dataset.desc || "—";
+
+
+        modal.classList.add(
+          "open"
+        );
+
+
+        document.body.style.overflow =
+          "hidden";
+
+      }
+
+
+      function closeModal() {
+
+        if (!modal) return;
+
+
+        modal.classList.remove(
+          "open"
+        );
+
+
+        document.body.style.overflow =
+          "";
+
+      }
+
+
+      document
+        .querySelectorAll(".js-details")
+        .forEach(function (button) {
+
+          button.addEventListener(
+            "click",
+            function () {
+
+              openModal(button);
+
+            }
+          );
+
+        });
+
+
+      if (mClose) {
+
+        mClose.addEventListener(
+          "click",
+          closeModal
+        );
+
+      }
+
+
+      if (modal) {
+
+        modal.addEventListener(
+          "click",
+          function (event) {
+
+            if (
+              event.target === modal
+            ) {
+
+              closeModal();
+
+            }
+
+          }
+        );
+
+      }
+
+
+      /* =======================================================
+         ESCAPE KEY
+      ======================================================= */
+
+      document.addEventListener(
+        "keydown",
+        function (event) {
+
+          if (
+            event.key === "Escape"
+          ) {
+
+            closeModal();
+
+          }
+
         }
-      });
-    }, {threshold:.14});
-    reveals.forEach(function(el){ io.observe(el); });
-  } else {
-    reveals.forEach(function(el){ el.classList.add("in"); });
-  }
+      );
 
-  /* ----- Details Modal ----- */
-  var modal   = document.getElementById("modal");
-  var mName   = document.getElementById("mName");
-  var mIcon   = document.getElementById("mIcon");
-  var mVersion= document.getElementById("mVersion");
-  var mStatus = document.getElementById("mStatus");
-  var mDesc   = document.getElementById("mDesc");
-  var mClose  = document.getElementById("mClose");
 
-  function openModal(btn){
-    mName.textContent    = btn.dataset.name;
-    mIcon.src            = btn.dataset.icon;
-    mIcon.alt            = btn.dataset.name;
-    mVersion.textContent = "نسخه " + btn.dataset.version;
-    mStatus.textContent  = btn.dataset.status;
-    mDesc.textContent    = btn.dataset.desc;
-    modal.classList.add("open");
-    document.body.style.overflow = "hidden";
-  }
-  function closeModal(){
-    modal.classList.remove("open");
-    document.body.style.overflow = "";
-  }
+    })();
 
-  document.querySelectorAll(".js-details").forEach(function(btn){
-    btn.addEventListener("click", function(){ openModal(btn); });
-  });
-
-  mClose.addEventListener("click", closeModal);
-  modal.addEventListener("click", function(e){
-    if (e.target === modal) closeModal();
-  });
-  document.addEventListener("keydown", function(e){
-
-if (e.key === "Escape") closeModal();
-  });
-})();
-</script>
+  </script>
 
 </body>
 </html>
