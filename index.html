@@ -99,6 +99,7 @@
 
   .section-head p { margin-top: 8px; color: var(--muted); font-size: 15px; }
 
+  /* ================= NAVBAR ================= */
   .nav {
     position: sticky;
     top: 0;
@@ -196,6 +197,7 @@
   .burger.open span:nth-child(2) { opacity: 0; }
   .burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
+  /* ================= HERO ================= */
   .hero { padding: 80px 0 40px; text-align: center; position: relative; }
 
   .hero-badge {
@@ -242,6 +244,7 @@
     margin-top: 36px;
   }
 
+  /* ================= BUTTONS ================= */
   .btn {
     display: inline-flex;
     align-items: center;
@@ -297,6 +300,7 @@
 
   .btn-block { width: 100%; }
 
+  /* ================= HERO QUICK ================= */
   .hero-quick {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -335,9 +339,11 @@
   .quick-item strong { display: block; font-size: 14px; font-weight: 800; }
   .quick-item small { display: block; margin-top: 2px; color: var(--muted); font-size: 11px; }
 
+  /* ================= REVEAL ================= */
   .reveal { opacity: 0; transform: translateY(26px); transition: opacity .6s ease, transform .6s ease; }
   .reveal.in { opacity: 1; transform: none; }
 
+  /* ================= GAME GRID ================= */
   .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
 
   .game-card {
@@ -428,6 +434,7 @@
   .game-actions .btn { padding: 12px 10px; min-height: 46px; font-size: 14px; }
   .game-actions .btn-video { grid-column: 1 / -1; }
 
+  /* ================= COMING SOON ================= */
   .coming-soon-thumb {
     display: flex;
     align-items: center;
@@ -467,6 +474,7 @@
     border: 1px solid rgba(139,108,255,.30);
   }
 
+  /* ================= LATEST ================= */
   .latest {
     position: relative;
     border-radius: 28px;
@@ -511,6 +519,7 @@
   .tag.new { background: rgba(139,108,255,.12); color: var(--neon-2); border: 1px solid rgba(139,108,255,.40); }
   .tag.gold { background: rgba(255,210,63,.08); color: var(--gold); border: 1px solid rgba(255,210,63,.32); }
 
+  /* ================= STATUS ================= */
   .status-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; }
 
   .status-item {
@@ -536,6 +545,7 @@
   .status-item .txt strong { display: block; font-size: 16px; font-weight: 800; }
   .status-item .txt small { color: var(--muted); font-size: 13px; }
 
+  /* ================= COPY CODE ================= */
   .copy-code-bar {
     display: flex;
     justify-content: center;
@@ -580,6 +590,7 @@
     color: #06210f;
   }
 
+  /* کادر نمایش کد */
   .code-preview {
     display: none;
     margin: 0 auto 30px;
@@ -627,6 +638,7 @@
   }
   .code-preview pre::-webkit-scrollbar-track { background: transparent; }
 
+  /* ================= FOOTER ================= */
   .footer { border-top: 1px solid var(--line-soft); margin-top: 40px; padding: 44px 0 34px; text-align: center; }
   .footer .brand { justify-content: center; font-size: 22px; margin-bottom: 14px; }
   .footer p { margin: 0 0 22px; color: var(--muted); font-size: 14px; }
@@ -650,6 +662,7 @@
 
   .copy { color: #6f6880; font-size: 13px; }
 
+  /* ================= MODAL ================= */
   .modal {
     position: fixed;
     inset: 0;
@@ -705,6 +718,7 @@
   .m-row b { font-weight: 800; }
   .m-row b.m-desc { font-weight: 500; text-align: right; line-height: 1.8; }
 
+  /* ================= VIDEO MODAL ================= */
   .video-modal {
     position: fixed;
     inset: 0;
@@ -766,6 +780,7 @@
     transform: scale(1.08);
   }
 
+  /* ================= TOAST ================= */
   .toast {
     position: fixed;
     bottom: 24px;
@@ -851,6 +866,7 @@
 </head>
 <body>
 
+<!-- ================= NAVBAR ================= -->
 <header class="nav">
   <div class="wrap nav-inner">
     <a href="#home" class="brand" aria-label="NOVA MOD">
@@ -876,658 +892,5 @@
 
 <main class="wrap">
 
-  <section class="hero" id="home">
-    <div class="hero-badge">
-      <span>💜</span>
-      <span>پلتفرم اختصاصی گیمینگ</span>
-    </div>
-
-    <h1>NOVA MOD</h1>
-
-    <p class="tagline">مرکز اختصاصی مود و ابزارهای گیمینگ</p>
-
-    <p class="desc">
-      جدیدترین مودها، ابزارها و انتشارهای NOVA را یک‌جا داشته باش؛
-      سریع، ساده و همیشه به‌روز.
-    </p>
-
-    <div class="hero-actions">
-      <a href="#games" class="btn btn-primary">🎮 مشاهده بازی‌ها</a>
-      <a href="#latest" class="btn btn-neon">🔥 آخرین انتشار</a>
-    </div>
-  </section>
-
-  <section class="hero-quick" aria-label="اطلاعات سریع NOVA">
-    <div class="quick-item">
-      <span class="quick-icon">🎮</span>
-      <div>
-        <strong>بازی‌های منتخب</strong>
-        <small>مجموعه اختصاصی NOVA</small>
-      </div>
-    </div>
-
-    <div class="quick-item">
-      <span class="quick-icon">⚡</span>
-      <div>
-        <strong>انتشار سریع</strong>
-        <small>جدیدترین نسخه‌ها</small>
-      </div>
-    </div>
-
-    <div class="quick-item">
-      <span class="quick-icon">🛡️</span>
-      <div>
-        <strong>دسترسی آسان</strong>
-        <small>دانلود مستقیم</small>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="games">
-    <div class="section-head reveal">
-      <span class="section-tag">🎮 GAME LIBRARY</span>
-      <h2>کتابخانه بازی‌ها</h2>
-      <p>بازی‌ها و انتشارهای اختصاصی NOVA MOD را انتخاب کن.</p>
-    </div>
-
-    <div class="grid">
-
-      <article class="game-card reveal">
-        <div class="game-thumb">
-          <span class="badge-status"><i></i>فعال</span>
-          <img src="https://uploadkon.ir/uploads/713823_26file-00000000ba4c81f48de6ddd208635662.png"
-               alt="چیت منچ باز NOVA MOD" loading="lazy" decoding="async">
-        </div>
-
-        <div class="game-body">
-          <h3>🎲 منچ باز</h3>
-
-          <div class="game-meta">
-            <span class="chip gold">نسخه 2.41.8</span>
-            <span class="chip">رایگان</span>
-          </div>
-
-          <p class="game-desc">
-            چیت اختصاصی NOVA MOD برای منچ باز؛ سازگار با آخرین نسخه بازی و کاملاً رایگان.
-          </p>
-
-          <div class="game-actions">
-            <button type="button" class="btn btn-ghost js-copy-card" style="grid-column:1/-1">
-              📋 کپی کد
-            </button>
-
-            <button type="button" class="btn btn-video js-video" data-video="">
-              🎬 ویدیو آموزشی
-            </button>
-
-            <a class="btn btn-primary"
-               href="https://uploadkon.ir/uploads/62d523_26منچ-باز-2-41-8-toast.zip"
-               target="_blank" rel="noopener noreferrer">
-              💜 دانلود
-            </a>
-
-            <button type="button" class="btn btn-ghost js-details"
-                    data-name="منچ باز"
-                    data-icon="https://uploadkon.ir/uploads/713823_26file-00000000ba4c81f48de6ddd208635662.png"
-                    data-version="2.41.8"
-                    data-status="فعال"
-                    data-desc="چیت اختصاصی NOVA MOD برای منچ باز، سازگار با آخرین نسخه و کاملاً رایگان.">
-              مشاهده جزئیات
-            </button>
-          </div>
-        </div>
-      </article>
-
-      <article class="game-card reveal">
-        <div class="game-thumb">
-          <span class="badge-status"><i></i>فعال</span>
-          <img src="https://uploadkon.ir/uploads/d3f223_26file-00000000484881f4848fe3cd7f2720e6.png"
-               alt="چیت مافیامون NOVA MOD" loading="lazy" decoding="async">
-        </div>
-
-        <div class="game-body">
-          <h3>🎭 مافیامون</h3>
-
-          <div class="game-meta">
-            <span class="chip gold">نسخه 1.10.4</span>
-            <span class="chip">رایگان</span>
-          </div>
-
-          <p class="game-desc">
-            چیت حرفه‌ای NOVA MOD برای مافیامون؛ سازگار با آخرین نسخه بازی و کاملاً رایگان.
-          </p>
-
-          <div class="game-actions">
-            <button type="button" class="btn btn-ghost js-copy-card" style="grid-column:1/-1">
-              📋 کپی کد
-            </button>
-
-            <button type="button" class="btn btn-video js-video" data-video="https://my.uploadkon.ir/d/rfXduIdhJNpPFNgZ58a5We4WNIhIIw/MTg0NDZ8cGFkZA.mp4">
-              🎬 ویدیو آموزشی
-            </button>
-
-            <a class="btn btn-primary"
-               href="https://uploadkon.ir/uploads/690e23_26مافیامون-1-10-4-toast.zip"
-               target="_blank" rel="noopener noreferrer">
-              💜 دانلود
-            </a>
-
-            <button type="button" class="btn btn-ghost js-details"
-                    data-name="مافیامون"
-                    data-icon="https://uploadkon.ir/uploads/d3f223_26file-00000000484881f4848fe3cd7f2720e6.png"
-                    data-version="1.10.4"
-                    data-status="فعال"
-                    data-desc="چیت حرفه‌ای NOVA MOD برای مافیامون، سازگار با آخرین نسخه و کاملاً رایگان.">
-              مشاهده جزئیات
-            </button>
-          </div>
-        </div>
-      </article>
-
-      <article class="game-card reveal">
-        <div class="game-thumb coming-soon-thumb">
-          <div class="coming-soon-icon">✦</div>
-          <span class="coming-label">به‌زودی</span>
-        </div>
-
-        <div class="game-body">
-          <h3>🎮 انتشار بعدی</h3>
-
-          <div class="game-meta">
-            <span class="chip">در حال آماده‌سازی</span>
-          </div>
-
-          <p class="game-desc">
-            انتشار بعدی NOVA MOD به‌زودی در این بخش قرار خواهد گرفت.
-          </p>
-
-          <div class="game-actions">
-            <button type="button" class="btn btn-ghost btn-block" style="grid-column:1/-1" disabled>
-              🔒 به‌زودی
-            </button>
-          </div>
-        </div>
-      </article>
-
-    </div>
-  </section>
-
-  <section class="section" id="latest">
-    <div class="section-head reveal">
-      <span class="section-tag">🔥 LATEST RELEASE</span>
-      <h2>آخرین انتشار</h2>
-      <p>جدیدترین نسخه منتشرشده توسط NOVA MOD</p>
-    </div>
-
-    <div class="latest reveal">
-      <div class="latest-grid">
-        <img class="latest-icon"
-             src="https://uploadkon.ir/uploads/713823_26file-00000000ba4c81f48de6ddd208635662.png"
-             alt="آخرین انتشار منچ باز" loading="lazy" decoding="async">
-
-        <div>
-          <h3>🎮 چیت منچ باز</h3>
-          <p class="sub">نسخه جدید منتشر شد</p>
-
-          <div class="latest-tags">
-            <span class="tag active">🟢 فعال</span>
-            <span class="tag new">🆕 نسخه جدید</span>
-            <span class="tag gold">نسخه 2.41.8</span>
-          </div>
-
-          <div class="latest-actions">
-            <button type="button" class="btn btn-video js-video" data-video="">
-              🎬 ویدیو آموزشی
-            </button>
-
-            <a class="btn btn-primary"
-               href="https://uploadkon.ir/uploads/62d523_26منچ-باز-2-41-8-toast.zip"
-               target="_blank" rel="noopener noreferrer">
-              ⬇️ دانلود نسخه
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="status">
-    <div class="section-head reveal">
-      <span class="section-tag">📡 NOVA STATUS</span>
-      <h2>وضعیت سیستم</h2>
-      <p>وضعیت فعلی بخش‌های مختلف NOVA MOD</p>
-    </div>
-
-    <div class="status-grid reveal">
-      <div class="status-item">
-        <i class="led"></i>
-        <div class="txt">
-          <strong>سرویس دانلود</strong>
-          <small>در دسترس و فعال</small>
-        </div>
-      </div>
-
-      <div class="status-item">
-        <i class="led"></i>
-        <div class="txt">
-          <strong>آخرین انتشار</strong>
-          <small>به‌روزرسانی شده</small>
-        </div>
-      </div>
-
-      <div class="status-item">
-        <i class="led"></i>
-        <div class="txt">
-          <strong>وضعیت سایت</strong>
-          <small>آنلاین و فعال</small>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="copycode">
-    <div class="section-head reveal">
-      <span class="section-tag">📋 COPY CODE</span>
-      <h2>کپی کد</h2>
-      <p>کد کامل CommandoGamePage رو با یک کلیک کپی کن</p>
-    </div>
-
-    <div class="copy-code-bar reveal">
-      <button type="button" class="copy-code-btn" id="copyCodeBtn">
-        📋 کپی کد CommandoGamePage
-      </button>
-      <button type="button" class="copy-code-btn" id="toggleCodeBtn">
-        👁️ نمایش کد
-      </button>
-    </div>
-
-    <div class="code-preview reveal" id="commandoPreview">
-      <div class="code-preview-head">
-        <span>CommandoGamePage.html</span>
-        <button type="button" class="copy-code-btn" data-copy-target="commandoCode" style="padding:6px 14px;font-size:13px;">
-          📋 کپی
-        </button>
-      </div>
-      <pre id="commandoCode">&lt;!-- ================= COMMANDO GAME PAGE ================= --&gt;
-&lt;section class="section" id="commando"&gt;
-  &lt;div class="section-head reveal"&gt;
-    &lt;span class="section-tag"&gt;🔫 COMMANDO&lt;/span&gt;
-    &lt;h2&gt;کاماندو&lt;/h2&gt;
-    &lt;p&gt;چیت اختصاصی NOVA MOD برای بازی کاماندو&lt;/p&gt;
-  &lt;/div&gt;
-
-  &lt;article class="game-card reveal"&gt;
-    &lt;div class="game-thumb"&gt;
-      &lt;span class="badge-status"&gt;&lt;i&gt;&lt;/i&gt;فعال&lt;/span&gt;
-      &lt;img src="" alt="چیت کاماندو NOVA MOD" loading="lazy" decoding="async"&gt;
-    &lt;/div&gt;
-
-    &lt;div class="game-body"&gt;
-      &lt;h3&gt;🔫 کاماندو&lt;/h3&gt;
-
-      &lt;div class="game-meta"&gt;
-        &lt;span class="chip gold"&gt;نسخه 1.0.0&lt;/span&gt;
-        &lt;span class="chip"&gt;رایگان&lt;/span&gt;
-      &lt;/div&gt;
-
-      &lt;p class="game-desc"&gt;
-        چیت اختصاصی NOVA MOD برای کاماندو؛ سازگار با آخرین نسخه بازی و کاملاً رایگان.
-      &lt;/p&gt;
-
-      &lt;div class="game-actions"&gt;
-        &lt;button type="button" class="btn btn-video js-video" data-video=""&gt;
-          🎬 ویدیو آموزشی
-        &lt;/button&gt;
-
-        &lt;a class="btn btn-primary"
-           href="#"
-           target="_blank" rel="noopener noreferrer"&gt;
-          💜 دانلود
-        &lt;/a&gt;
-
-        &lt;button type="button" class="btn btn-ghost js-details"
-                data-name="کاماندو"
-                data-icon=""
-                data-version="1.0.0"
-                data-status="فعال"
-                data-desc="چیت اختصاصی NOVA MOD برای کاماندو، سازگار با آخرین نسخه و کاملاً رایگان."&gt;
-          مشاهده جزئیات
-        &lt;/button&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/article&gt;
-&lt;/section&gt;</pre>
-    </div>
-  </section>
-
-</main>
-
-<footer class="footer">
-  <div class="wrap">
-    <div class="brand">
-      <span class="dot"></span>
-      <span>NOVA MOD</span>
-    </div>
-
-    <p>مرکز اختصاصی مود و ابزارهای گیمینگ</p>
-
-    <div class="socials">
-      <a href="https://t.me/IM_NOVAA" target="_blank" rel="noopener noreferrer">🛠️ پشتیبانی — @IM_NOVAA</a>
-      <a href="https://t.me/NOVA_CHIT" target="_blank" rel="noopener noreferrer">📢 کانال — @NOVA_CHIT</a>
-      <a href="https://rubika.ir/NOVA_CHIT" target="_blank" rel="noopener noreferrer">📣 روبیکا — NOVA_CHIT</a>
-    </div>
-
-    <div class="copy">© تمام حقوق محفوظ است — NOVA MOD</div>
-  </div>
-</footer>
-
-<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mName">
-  <div class="modal-box">
-    <div class="m-top">
-      <img id="mIcon" src="" alt="">
-      <div>
-        <h3 id="mName">—</h3>
-        <span class="chip gold" id="mVersion">—</span>
-      </div>
-    </div>
-
-    <div class="m-rows">
-      <div class="m-row">
-        <span>وضعیت</span>
-        <b id="mStatus" style="color:var(--green)">—</b>
-      </div>
-      <div class="m-row">
-        <span>قیمت</span>
-        <b>رایگان</b>
-      </div>
-      <div class="m-row">
-        <span>توضیح</span>
-        <b class="m-desc" id="mDesc">—</b>
-      </div>
-    </div>
-
-    <button type="button" class="btn btn-neon btn-block" id="mClose">بستن</button>
-  </div>
-</div>
-
-<div class="video-modal" id="videoModal" role="dialog" aria-modal="true" aria-label="پخش ویدیو آموزشی">
-  <div class="video-modal-box">
-    <button type="button" class="video-modal-close" id="videoClose" aria-label="بستن ویدیو">✕</button>
-    <video id="videoPlayer" controls playsinline preload="metadata"></video>
-  </div>
-</div>
-
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
-
-<script>
-  (function () {
-    "use strict";
-
-    var $ = function (id) { return document.getElementById(id); };
-    var $$ = function (sel) { return Array.prototype.slice.call(document.querySelectorAll(sel)); };
-
-    var burger = $("burger");
-    var navLinks = $("navLinks");
-
-    function setMenu(open) {
-      navLinks.classList.toggle("open", open);
-      burger.classList.toggle("open", open);
-      burger.setAttribute("aria-expanded", open ? "true" : "false");
-      burger.setAttribute("aria-label", open ? "بستن منو" : "باز کردن منو");
-    }
-
-    if (burger && navLinks) {
-      burger.addEventListener("click", function () {
-        setMenu(!navLinks.classList.contains("open"));
-      });
-
-      $$("#navLinks a").forEach(function (a) {
-        a.addEventListener("click", function () { setMenu(false); });
-      });
-
-      window.addEventListener("resize", function () {
-        if (window.innerWidth > 860) setMenu(false);
-      });
-    }
-
-    var reveals = $$(".reveal");
-
-    if ("IntersectionObserver" in window) {
-      var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("in");
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.14 });
-
-      reveals.forEach(function (el) { observer.observe(el); });
-    } else {
-      reveals.forEach(function (el) { el.classList.add("in"); });
-    }
-
-    var toastEl = $("toast");
-    var toastTimer;
-
-    function toast(message) {
-      clearTimeout(toastTimer);
-      toastEl.textContent = message;
-      toastEl.classList.add("show");
-      toastTimer = setTimeout(function () {
-        toastEl.classList.remove("show");
-      }, 2800);
-    }
-
-    var videoModal = $("videoModal");
-    var videoPlayer = $("videoPlayer");
-    var videoClose = $("videoClose");
-
-    function openVideo(url) {
-      if (!videoModal || !videoPlayer) return;
-      videoPlayer.src = url;
-      videoModal.classList.add("open");
-      document.body.style.overflow = "hidden";
-
-      var playPromise = videoPlayer.play();
-      if (playPromise && typeof playPromise.catch === "function") {
-        playPromise.catch(function () {});
-      }
-    }
-
-    function closeVideo() {
-      if (!videoModal || !videoModal.classList.contains("open")) return;
-      try { videoPlayer.pause(); } catch (e) {}
-      videoPlayer.removeAttribute("src");
-      videoPlayer.load();
-      videoModal.classList.remove("open");
-      document.body.style.overflow = "";
-    }
-
-    $$(".js-video").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        var url = (btn.dataset.video || "").trim();
-
-        if (/^https?:\/\//i.test(url)) {
-          openVideo(url);
-        } else {
-          toast("🎬 ویدیو آموزشی این بازی به‌زودی اضافه می‌شود");
-        }
-      });
-    });
-
-    if (videoClose) videoClose.addEventListener("click", closeVideo);
-
-    if (videoModal) {
-      videoModal.addEventListener("click", function (event) {
-        if (event.target === videoModal) closeVideo();
-      });
-    }
-
-    var modal = $("modal");
-    var mName = $("mName");
-    var mIcon = $("mIcon");
-    var mVersion = $("mVersion");
-    var mStatus = $("mStatus");
-    var mDesc = $("mDesc");
-    var mClose = $("mClose");
-    var lastFocus = null;
-
-    function openModal(button) {
-      if (!modal) return;
-
-      lastFocus = button;
-
-      mName.textContent = button.dataset.name || "—";
-
-      var iconSrc = (button.dataset.icon || "").trim();
-      if (iconSrc) {
-        mIcon.src = iconSrc;
-        mIcon.style.display = "";
-      } else {
-        mIcon.removeAttribute("src");
-        mIcon.style.display = "none";
-      }
-      mIcon.alt = button.dataset.name || "";
-
-      mVersion.textContent = "نسخه " + (button.dataset.version || "—");
-      mStatus.textContent = button.dataset.status || "—";
-      mDesc.textContent = button.dataset.desc || "—";
-
-      modal.classList.add("open");
-      document.body.style.overflow = "hidden";
-      mClose.focus();
-    }
-
-    function closeModal() {
-      if (!modal || !modal.classList.contains("open")) return;
-
-      modal.classList.remove("open");
-      document.body.style.overflow = "";
-
-      if (lastFocus) lastFocus.focus();
-    }
-
-    $$(".js-details").forEach(function (button) {
-      button.addEventListener("click", function () { openModal(button); });
-    });
-
-    if (mClose) mClose.addEventListener("click", closeModal);
-
-    if (modal) {
-      modal.addEventListener("click", function (event) {
-        if (event.target === modal) closeModal();
-      });
-    }
-
-    var commandoCode = $("commandoCode");
-    var copyCodeBtn = $("copyCodeBtn");
-    var toggleCodeBtn = $("toggleCodeBtn");
-    var commandoPreview = $("commandoPreview");
-
-    function copyText(text, onSuccess) {
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(onSuccess).catch(function () {
-          fallbackCopy(text);
-          onSuccess();
-        });
-      } else {
-        fallbackCopy(text);
-        onSuccess();
-      }
-    }
-
-    function fallbackCopy(text) {
-      var ta = document.createElement("textarea");
-      ta.value = text;
-      ta.style.position = "fixed";
-      ta.style.opacity = "0";
-      document.body.appendChild(ta);
-      ta.select();
-      try { document.execCommand("copy"); } catch (e) {}
-      document.body.removeChild(ta);
-    }
-
-    if (copyCodeBtn && commandoCode) {
-      copyCodeBtn.addEventListener("click", function () {
-        var original = copyCodeBtn.innerHTML;
-        copyText(commandoCode.textContent, function () {
-          copyCodeBtn.classList.add("copied");
-          copyCodeBtn.innerHTML = "✅ کپی شد!";
-          toast("📋 کد CommandoGamePage کپی شد");
-          setTimeout(function () {
-            copyCodeBtn.classList.remove("copied");
-            copyCodeBtn.innerHTML = original;
-          }, 1800);
-        });
-      });
-    }
-
-    if (toggleCodeBtn && commandoPreview) {
-      toggleCodeBtn.addEventListener("click", function () {
-        var isOpen = commandoPreview.classList.toggle("open");
-        toggleCodeBtn.innerHTML = isOpen ? "🙈 بستن کد" : "👁️ نمایش کد";
-      });
-    }
-
-    $$("[data-copy-target]").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        var targetId = btn.dataset.copyTarget;
-        var target = document.getElementById(targetId);
-        if (!target) return;
-
-        var original = btn.innerHTML;
-        copyText(target.textContent, function () {
-          btn.classList.add("copied");
-          btn.innerHTML = "✅ کپی شد!";
-          toast("📋 کد کپی شد");
-          setTimeout(function () {
-            btn.classList.remove("copied");
-            btn.innerHTML = original;
-          }, 1800);
-        });
-      });
-    });
-
-    /* ---- کپی کد هر کارت بازی ---- */
-    $$(".js-copy-card").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        var card = btn.closest(".game-card");
-        if (!card) return;
-
-        var clone = card.cloneNode(true);
-
-        // حذف خود دکمه کپی از HTML کپی‌شده
-        var innerBtn = clone.querySelector(".js-copy-card");
-        if (innerBtn && innerBtn.parentNode) innerBtn.parentNode.removeChild(innerBtn);
-
-        // حذف کلاس انیمیشن تا کد تمیز و آماده استفاده مجدد باشد
-        clone.classList.remove("in");
-
-        var titleEl = clone.querySelector("h3");
-        var title = titleEl ? titleEl.textContent.trim() : "Game Card";
-        var html = "<!-- NOVA MOD | " + title + " -->\n" + clone.outerHTML;
-
-        var original = btn.innerHTML;
-        copyText(html, function () {
-          btn.innerHTML = "✅ کپی شد!";
-          toast("📋 کد کارت «" + title + "» کپی شد");
-          setTimeout(function () {
-            btn.innerHTML = original;
-          }, 1800);
-        });
-      });
-    });
-
-    document.addEventListener("keydown", function (event) {
-      if (event.key === "Escape") {
-        closeModal();
-        closeVideo();
-        setMenu(false);
-      }
-    });
-
-  })();
-</script>
-</body>
-</html>
+  <!-- ================= HERO ================= -->
+  <section class="
