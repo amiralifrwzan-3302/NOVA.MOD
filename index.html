@@ -171,8 +171,8 @@ a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit}i
         <p class="gameDesc">نسخه اختصاصی NOVA MOD برای منچ باز، سازگار با نسخه 2.41.8.</p>
         <div class="gameActions">
           <!-- متن کپی رو وارد کن -->
-          <button type="button" class="btn btnGhost jsCopy" data-copy="" data-label="منچ باز">📋 کپی کد دانلود</button>
-          <button type="button" class="btn btnVideo jsVideo" data-video="" data-title="آموزش نصب مود منچ باز">🎬 آموزش نصب</button>
+          <button type="button" class="btn btnGhost jsCopy" data-copy="" data-label="منچ باز">📋 کپی کد پنل چیت</button>
+          <button type="button" class="btn btnVideo jsVideo" data-video="" data-title="🎬 ویدیو یِ آموزشی مود منچ باز">🎬 ویدیو یِ آموزشی</button>
           <a class="btn btnPrimary" href="https://uploadkon.ir/uploads/62d523_26منچ-باز-2-41-8-toast.zip" target="_blank" rel="noopener noreferrer">⬇️ دانلود مود</a>
           <button type="button" class="btn btnGhost jsDetails" data-name="منچ باز" data-icon="https://uploadkon.ir/uploads/713823_26file-00000000ba4c81f48de6ddd208635662.png" data-version="2.41.8" data-status="فعال" data-desc="نسخه اختصاصی NOVA MOD برای منچ باز، سازگار با آخرین نسخه ثبت‌شده در سایت و رایگان.">جزئیات</button>
         </div>
@@ -190,8 +190,8 @@ a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit}i
         <p class="gameDesc">نسخه اختصاصی NOVA MOD برای مافیامون با اجرای پایدار و امکانات جدید.</p>
         <div class="gameActions">
           <!-- متن کپی رو وارد کن -->
-          <button type="button" class="btn btnGhost jsCopy" data-copy="CommandoGamePage" data-label="مافیامون">📋 کپی کد دانلود</button>
-          <button type="button" class="btn btnVideo jsVideo" data-video="https://my.uploadkon.ir/d/rfXduIdhJNpPFNgZ58a5We4WNIhIIw/MTg0NDZ8cGFkZA.mp4" data-title="آموزش نصب مود مافیامون">🎬 آموزش نصب</button>
+          <button type="button" class="btn btnGhost jsCopy" data-copy="CommandoGamePage" data-label="مافیامون">📋 کپی کد پنل چیت</button>
+          <button type="button" class="btn btnVideo jsVideo" data-video="https://my.uploadkon.ir/d/rfXduIdhJNpPFNgZ58a5We4WNIhIIw/MTg0NDZ8cGFkZA.mp4" data-title="🎬 ویدیو یِ آموزشی مود مافیامون">🎬 ویدیو یِ آموزشی</button>
           <a class="btn btnPrimary" href="https://uploadkon.ir/uploads/690e23_26مافیامون-1-10-4-toast.zip" target="_blank" rel="noopener noreferrer">⬇️ دانلود مود</a>
           <button type="button" class="btn btnGhost jsDetails" data-name="مافیامون" data-icon="https://uploadkon.ir/uploads/d3f223_26file-00000000484881f4848fe3cd7f2720e6.png" data-version="1.10.4" data-status="فعال" data-desc="نسخه اختصاصی NOVA MOD برای مافیامون، سازگار با آخرین نسخه ثبت‌شده در سایت و رایگان.">جزئیات</button>
         </div>
@@ -222,8 +222,8 @@ a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit}i
         <div class="latestTags"><span class="tag tagActive">🟢 فعال</span><span class="tag tagNew">🆕 جدید</span><span class="tag tagGold">نسخه 2.41.8</span></div>
         <div class="latestActions">
           <!-- متن کپی رو وارد کن -->
-          <button type="button" class="btn btnGhost jsCopy" data-copy="" data-label="منچ باز">📋 کپی کد دانلود</button>
-          <button type="button" class="btn btnVideo jsVideo" data-video="" data-title="آموزش نصب مود منچ باز">🎬 آموزش نصب</button>
+          <button type="button" class="btn btnGhost jsCopy" data-copy="" data-label="منچ باز">📋 کپی کد پنل چیت</button>
+          <button type="button" class="btn btnVideo jsVideo" data-video="" data-title="🎬 ویدیو یِ آموزشی مود منچ باز">🎬 ویدیو یِ آموزشی</button>
           <a class="btn btnPrimary" href="https://uploadkon.ir/uploads/62d523_26منچ-باز-2-41-8-toast.zip" target="_blank" rel="noopener noreferrer">⬇️ دانلود نسخه</a>
         </div>
       </div>
@@ -270,7 +270,7 @@ a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit}i
 <!-- VIDEO -->
 <div class="modal" id="videoModal" role="dialog" aria-modal="true" aria-labelledby="videoTitle">
   <div class="modalBox videoBox">
-    <div class="videoHead"><h3 id="videoTitle">🎬 آموزش نصب</h3><button class="closeBtn" id="videoClose" type="button" aria-label="بستن">×</button></div>
+    <div class="videoHead"><h3 id="videoTitle">🎬 ویدیو یِ آموزشی</h3><button class="closeBtn" id="videoClose" type="button" aria-label="بستن">×</button></div>
     <video id="tutorialVideo" class="videoFrame" controls playsinline preload="metadata"></video>
   </div>
 </div>
@@ -387,7 +387,7 @@ function openVideo(btn){
     return;
   }
   videoLastFocus=btn;
-  $("videoTitle").textContent=btn.dataset.title||"🎬 آموزش نصب";
+  $("videoTitle").textContent=btn.dataset.title||"🎬 ویدیو یِ آموزشی";
   video.src=url;
   videoModal.classList.add("open");
   document.body.style.overflow="hidden";
